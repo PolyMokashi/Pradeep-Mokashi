@@ -3,7 +3,6 @@ import { useTheme } from '@mui/material/styles'
 import AutoType from '../../components/AutoType'
 import CustomButton from '../../commom-components/CustomButton'
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload'
 import EmailIcon from '@mui/icons-material/Email'
 import './Home.css'
 import Lottie from 'react-lottie'
@@ -11,7 +10,7 @@ import animationData from '../../Images/Animation - 1715361331426.json'
 import animationData1 from '../../Images/Darkmode_profile.json'
 
 const Home = ({ mode }) => {
-    const [clicked, setClicked] = useState(false)
+    const [, setClicked] = useState(false)
     const [clicked1, setClicked1] = useState(false)
     const theme = useTheme()
     const isXsScreen = useMediaQuery(theme.breakpoints.down('sm'))
