@@ -18,7 +18,7 @@ const Experience = ({mode}) => {
                     alignItems: 'center',
                 }}
             >
-                <Stack direction="column" sx={{ width: '70%' }}>
+                <Stack sx={{ width: {sm:'70%'} }}>
                     {ExperienceInfo.map((data, index) => (
                         <Link
                             key={index}

@@ -89,7 +89,7 @@ const Home = ({ mode }) => {
                                 </span>
                                 <span className="button__icon">
                                     <svg
-                                        class="svg"
+                                        className="svg"
                                         data-name="Layer 2"
                                         id="bdd05811-e15d-428c-bb53-8661459f9307"
                                         viewBox="0 0 35 35"

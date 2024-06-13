@@ -24,7 +24,7 @@ const ExperienceCard = ({
                 variant={mode === 'on' ? 'soft' : ''}
                 orientation="horizontal"
                 sx={{
-                    width: {md:'100%'},
+                    width: "100%",
                     resize: 'horizontal',
                     my: 3,
                     background:

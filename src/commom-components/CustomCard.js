@@ -35,7 +35,7 @@ const CustomCard = ({
                     cursor: 'pointer',
                     background: mode==='off'? 'linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%)': '',
                 }}
-                elevation="3"
+                elevation='3'
             >
                 <CardHeader
                     avatar={

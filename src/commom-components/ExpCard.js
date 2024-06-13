@@ -52,7 +52,7 @@ const ExpCard = ({ CompanyLogo, CompanyName, Role, Description,TechIcon, mode })
                                     />
                                 }
                                 onClick={() => {}}
-                                sx={{ mr: 2, mt: 2 }}
+                                sx={{ mr: {md:2}, mt: 2 }}
                             >
                                 {icon.name}
                             </Chip>
