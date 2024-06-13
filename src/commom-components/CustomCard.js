@@ -6,6 +6,7 @@ import {
 } from '@mui/material'
 import React from 'react'
 import "./CustomCard.css"
+import VideoPlayer from './VideoPlayer'
 const CustomCard = ({
     AvatarIcon,
     src,
@@ -64,9 +65,8 @@ const CustomCard = ({
                 />
                 <CardContent>
                     {src ? (
-                        <video autoPlay loop muted width="100%" height="100%">
-                            <source src={src} type="video/mp4" />
-                        </video>
+                        <VideoPlayer src={src} autoPlay loop >
+                        </VideoPlayer>
                     ) : (
                         <img
                             src={project_image}

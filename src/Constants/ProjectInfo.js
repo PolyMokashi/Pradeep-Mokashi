@@ -7,7 +7,7 @@ import MUIIcon from '../Images/material-ui.svg'
 import VuetifyIcon from '../Images/vuetify.svg'
 import cIcon from '../Images/c-programming.svg'
 import pacmanicon from '../Images/pacman.png'
-// import RedB from '../Images/RedB.mp4'
+import RedB from '../Images/RedB.mp4'
 import PartImage from '../Images/Part_Number.png'
 import Pacman1 from '../Images/Pacman.mp4'
 import HRmanage from '../Images/HR_management.mp4'
@@ -52,7 +52,7 @@ const ProjectInfo = [
         Title: 'RedB',
         SubHeader:
             'Intelligent blood Management System for Hospitals and Blood Banks',
-        src: 'https://drive.google.com/file/d/1aMXQfpM2E8WQBzy7M7XEUT9GJ_EJyxtN/view?usp=drive_link',
+        src: RedB,
         Description:
             'RedB is a new generation technology that connects hospital administration with blood banks. RedB is a platform that connects hospital administration with blood banks. This innovative platform is designed to streamline blood bank operations and improve patient safety by ensuring timely access to blood products when needed',
         TechIcon: icons,
