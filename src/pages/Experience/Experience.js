@@ -14,11 +14,11 @@ const Experience = ({mode}) => {
             <Grid
                 sx={{
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    justifyContent: { md: 'center' },
+                    alignItems: { md: 'center' },
                 }}
             >
-                <Stack sx={{ width: {sm:'70%'} }}>
+                <Stack sx={{ width: { sm: '70%' } }}>
                     {ExperienceInfo.map((data, index) => (
                         <Link
                             key={index}
