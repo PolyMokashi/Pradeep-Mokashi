@@ -5,7 +5,7 @@ import MobileViewCard from '../commom-components/MobileViewCard'
 
 const AchievementsPage = ({mode}) => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
       <div>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>

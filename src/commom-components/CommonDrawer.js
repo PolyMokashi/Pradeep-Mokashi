@@ -3,6 +3,7 @@ import React from 'react'
 import PublicIcon from '@mui/icons-material/Public';
 import { Link } from 'react-router-dom';
 import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded'
+import VideoPlayer from './VideoPlayer';
 
 const CommonDrawer = ({
     open,
@@ -44,20 +45,17 @@ const CommonDrawer = ({
                         <Box
                             sx={{
                                 mt: 3,
+                                ml:{xs:-2},
                                 display: 'flex',
                                 justifyContent: 'center',
                             }}
                         >
                             {src ? (
-                                <video
+                                <VideoPlayer
+                                    src={src}
                                     autoPlay
                                     loop
-                                    muted
-                                    width="95%"
-                                    height="95%"
-                                >
-                                    <source src={src} type="video/mp4" />
-                                </video>
+                                ></VideoPlayer>
                             ) : (
                                 <img
                                     src={project_image}

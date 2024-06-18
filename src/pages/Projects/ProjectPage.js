@@ -3,11 +3,27 @@ import React, { useState } from 'react'
 import CustomCard from '../../commom-components/CustomCard'
 import ProjectInfo from '../../Constants/ProjectInfo'
 import CommonDrawer from '../../commom-components/CommonDrawer'
+import { motion } from 'framer-motion'
 
 const ProjectPage = ({ mode }) => {
     const [selectedCard, setSelectedCard] = useState(null);
     const [open, setOpen] = useState(false);
 
+const cardVariants = {
+    offscreen: {
+        y: 300,
+        opacity: 0,
+    },
+    onscreen: {
+        y: 50,
+        opacity: 1,
+        transition: {
+            type: 'spring',
+            bounce: 0.4,
+            duration: 0.8,
+        },
+    },
+}
     const toggleDrawer = () => {
         setOpen(false);
     }
@@ -34,17 +50,23 @@ const ProjectPage = ({ mode }) => {
                 direction="row"
                 spacing={6}
                 flexWrap="wrap"
-                sx={{ display: 'flex', justifyContent: 'center' }}
+                sx={{ display: 'flex', justifyContent: 'center', mb:15 }}
                 useFlexGap
             >
                 {ProjectInfo.map((data) => (
-                    <div onClick={() => handleCardClick(data)}>
+                    <motion.div
+                        key={data.Title}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.8 }}
+                        variants={cardVariants}
+                        onClick={() => handleCardClick(data)}
+                    >
                         <CustomCard
                             key={data.Title}
                             project_image={data.project_image}
                             AvatarIcon={data.AvatarIcon}
                             src={data.src}
-                            ProjectImg={data.ProjectImg}
                             Project_link={data.Project_link}
                             Title={data.Title}
                             SubHeader={data.SubHeader}
@@ -52,7 +74,7 @@ const ProjectPage = ({ mode }) => {
                             TechIcon={data.TechIcon}
                             mode={mode}
                         />
-                    </div>
+                    </motion.div>
                 ))}
             </Stack>
             {selectedCard && (

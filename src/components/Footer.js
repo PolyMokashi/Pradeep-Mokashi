@@ -10,8 +10,8 @@ import {
 const Footer = ({ mode }) => {
     return (
         <Box
-        component="footer"
-        sx={{
+            component="footer"
+            sx={{
                 px: 2,
                 mt: 'auto',
                 backgroundColor: mode === 'on' ? 'white' : 'gray',
@@ -20,8 +20,8 @@ const Footer = ({ mode }) => {
                 bottom: 0,
                 width: '98%',
             }}
-            >
-            <Divider/>
+        >
+            <Divider />
             <Grid
                 container
                 spacing={4}
@@ -34,8 +34,13 @@ const Footer = ({ mode }) => {
                     md={6}
                     textAlign={{ xs: 'center', md: 'left' }}
                 >
-                    <Typography sx={{color:'black'}} variant="body2" component="p">
-                        &copy; {new Date().getFullYear()} Pradeep Mokashi
+                    <Typography
+                        sx={{ color: 'black' }}
+                        variant="body2"
+                        component="p"
+                    >
+                        &copy; {new Date().getFullYear()} Pradeep Mokashi. All
+                        rights reserved.
                     </Typography>
                 </Grid>
                 <Grid

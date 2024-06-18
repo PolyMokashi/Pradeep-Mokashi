@@ -3,10 +3,12 @@ import {
     CardHeader,
     Avatar,
     CardContent,
+    CardActions,
 } from '@mui/material'
 import React from 'react'
 import "./CustomCard.css"
 import VideoPlayer from './VideoPlayer'
+import CustomButton from './CustomButton'
 const CustomCard = ({
     AvatarIcon,
     src,
@@ -21,10 +23,9 @@ const CustomCard = ({
             <Card
                 className="mycard"
                 sx={{
-                    mt: 5,
                     width: { xs: '100%', md: 550 },
                     ml: { xs: 1, md: '' },
-                    opacity: 0.5,
+                    opacity: { md: 0.5 },
                     transition: 'opacity 0.3s',
                     '&:hover': {
                         opacity: 1,
@@ -33,9 +34,12 @@ const CustomCard = ({
                     position: 'relative',
                     height: '100%',
                     cursor: 'pointer',
-                    background: mode==='off'? 'linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%)': '',
+                    background:
+                        mode === 'off'
+                            ? 'linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%)'
+                            : '',
                 }}
-                elevation='3'
+                elevation="3"
             >
                 <CardHeader
                     avatar={
@@ -65,8 +69,7 @@ const CustomCard = ({
                 />
                 <CardContent>
                     {src ? (
-                        <VideoPlayer src={src} autoPlay loop >
-                        </VideoPlayer>
+                        <VideoPlayer src={src} autoPlay loop></VideoPlayer>
                     ) : (
                         <img
                             src={project_image}
@@ -78,6 +81,11 @@ const CustomCard = ({
                         ></img>
                     )}
                 </CardContent>
+                    <CardActions>
+                            <CustomButton variant="text" onClick={() => {}}>
+                                Tap to view more
+                            </CustomButton>
+                    </CardActions>
             </Card>
         </>
     )

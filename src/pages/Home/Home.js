@@ -8,6 +8,7 @@ import './Home.css'
 import Lottie from 'react-lottie'
 import animationData from '../../Images/Animation - 1715361331426.json'
 import animationData1 from '../../Images/Darkmode_profile.json'
+import { motion } from 'framer-motion'
 
 const Home = ({ mode }) => {
     const [, setClicked] = useState(false)
@@ -46,6 +47,11 @@ const Home = ({ mode }) => {
         setClicked(true)
     }
 
+    const variants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+    };
+
     return (
         <div>
             <Grid container alignItems="center" justifyContent="center">
@@ -58,18 +64,30 @@ const Home = ({ mode }) => {
                             {'<body>'}
                         </Typography>
                     </Box>
-                    <AutoType isXsScreen={isXsScreen} />
-                    <Box
-                        sx={{
-                            height: '30dvh',
-                        }}
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={variants}
                     >
-                        {mode === 'on' ? (
-                            <Lottie options={defaultOptions} />
-                        ) : (
-                            <Lottie options={defaultOptions1} />
-                        )}
-                    </Box>
+                        <AutoType isXsScreen={isXsScreen} />
+                    </motion.div>
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={variants}
+                    >
+                        <Box
+                            sx={{
+                                height: '30dvh',
+                            }}
+                        >
+                            {mode === 'on' ? (
+                                <Lottie options={defaultOptions} />
+                            ) : (
+                                <Lottie options={defaultOptions1} />
+                            )}
+                        </Box>
+                    </motion.div>
                     <Box
                         sx={{
                             display: 'flex',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
     Card,
     Container,
@@ -13,121 +13,117 @@ import LinkIcon from '@mui/icons-material/Link'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
 import cardsData from '../Constants/CerticatesInfo'
+import { motion } from 'framer-motion'
 
-function App() {
-    const [openCardId, setOpenCardId] = useState(null)
-    const [clickedOutside, setClickedOutside] = useState(false)
-
-    const handleCardClick = (id) => {
-        setOpenCardId(openCardId === id ? null : id)
-        setClickedOutside(false) // Reset clickedOutside state
+function MoblieViewCard({ mode }) {
+    const cardVariants = {
+        offscreen: {
+            y: 300,
+            opacity: 0,
+        },
+        onscreen: {
+            y: 50,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                bounce: 0.4,
+                duration: 0.8,
+            },
+        },
     }
-
-    const handleOutsideClick = () => {
-        if (openCardId !== null) {
-            setOpenCardId(null)
-            setClickedOutside(true)
-        }
-    }
-
     return (
-        <Container onClick={handleOutsideClick} sx={{ position: 'relative' }}>
-            <div
-                style={{
-                    filter:
-                        openCardId !== null || clickedOutside
-                            ? 'blur(3px)'
-                            : 'none',
-                    transition: 'filter 0.3s',
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    zIndex: 1,
-                }}
-            ></div>
+        <Container>
             <Box
                 sx={{
-                    display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
-                    position: 'relative',
-                    zIndex: 2,
+                    mb: 10,
+                    ml:{xs:-2}
                 }}
             >
                 {cardsData.map((card) => (
-                    <Card
+                    <motion.div
                         key={card.id}
-                        onClick={() => handleCardClick(card.id)}
-                        sx={{
-                            width: 300,
-                            marginBottom: 2,
-                            padding: 2,
-                            transition: 'transform 0.3s, box-shadow 0.3s',
-                            cursor: 'pointer',
-                            position: 'relative',
-                            zIndex: openCardId === card.id ? 10 : 1,
-                            transform:
-                                openCardId === card.id
-                                    ? 'translateY(-50%) scale(1.2)'
-                                    : 'none',
-                            left: openCardId === card.id ? '50%' : '0',
-                            top: openCardId === card.id ? '50%' : '0',
-                            ...(openCardId === card.id && {
-                                position: 'fixed',
-                                transform: 'translate(-50%, -50%) scale(1.2)',
-                            }),
-                            '&:hover': {
-                                transform: `rotateY(15deg)`,
-                                boxShadow: 6,
-                                ...(openCardId === card.id && {
-                                    // Conditionally apply hover effect
-                                    transform:
-                                        'translate(-50%, -50%) scale(1.2) rotateY(15deg)', // Apply hover effect only for the clicked card
-                                }),
-                            },
-                        }}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.8 }}
+                        variants={cardVariants}
                     >
-                        <CardHeader
-                            avatar={
-                                <Avatar
-                                    sx={{
-                                        width: 48,
-                                        height: 48,
-                                        background: 'transparent',
-                                    }}
-                                    aria-label="Technology Stack"
-                                    src={card.ava_icon}
-                                />
-                            }
-                            action={
-                                <IconButton aria-label="Launch">
-                                    <Link to={card.link}>
-                                        <LinkIcon fontSize="large" />
-                                    </Link>
-                                </IconButton>
-                            }
-                            title={card.title}
-                            subheader={card.subheader}
-                        />
-                        <CardMedia
-                            component="img"
-                            image={card.img}
-                            alt={card.title}
-                        />
-                        <CardActions>
-                            <Link to={card.link}>
-                                <CustomButton variant="text" onClick={() => {}}>
-                                    View
-                                </CustomButton>
-                            </Link>
-                        </CardActions>
-                    </Card>
+                        <Card
+                            key={card.id}
+                            sx={{
+                                width: '100%',
+                                height: '100%',
+                                marginBottom: 3,
+                                padding: 2,
+                                background:
+                                    mode === 'off'
+                                        ? 'linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%)'
+                                        : 'white',
+                                        boxShadow: 6,
+                            }}
+                        >
+                            <CardHeader
+                                avatar={
+                                    <Avatar
+                                        sx={{
+                                            width: 48,
+                                            height: 48,
+                                            background: 'transparent',
+                                        }}
+                                        aria-label="Technology Stack"
+                                        src={card.ava_icon}
+                                    />
+                                }
+                                action={
+                                    <IconButton aria-label="Launch">
+                                        <Link to={card.link}>
+                                            <LinkIcon fontSize="large" />
+                                        </Link>
+                                    </IconButton>
+                                }
+                                title={card.title}
+                                subheader={card.subheader}
+                                titleTypographyProps={{
+                                    sx: {
+                                        color:
+                                            mode === 'off'
+                                                ? 'white'
+                                                : 'inherit',
+                                        fontWeight: 'bold',
+                                        fontFamily: 'Verdana',
+                                    },
+                                }}
+                                subheaderTypographyProps={{
+                                    sx: {
+                                        color:
+                                            mode === 'off'
+                                                ? 'white'
+                                                : 'inherit',
+                                    },
+                                    fontFamily: 'Verdana',
+                                }}
+                            />
+                            <CardMedia
+                                component="img"
+                                image={card.img}
+                                alt={card.title}
+                            />
+                            <CardActions>
+                                <Link to={card.link}>
+                                    <CustomButton
+                                        variant="text"
+                                        onClick={() => {}}
+                                    >
+                                        View
+                                    </CustomButton>
+                                </Link>
+                            </CardActions>
+                        </Card>
+                    </motion.div>
                 ))}
             </Box>
         </Container>
     )
 }
 
-export default App
+export default MoblieViewCard
