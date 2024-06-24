@@ -6,10 +6,12 @@ import ReactIcon from '../Images/react.svg'
 import MUIIcon from '../Images/material-ui.svg'
 import VuetifyIcon from '../Images/vuetify.svg'
 import cIcon from '../Images/c-programming.svg'
+import pacmanicon from '../Images/pacman.png'
 import RedB from '../Images/RedB.mp4'
 import PartImage from '../Images/Part_Number.png'
 import Pacman1 from '../Images/Pacman.mp4'
 import HRmanage from '../Images/HR_management.mp4'
+import RedBImage from '../Images/Picture2.png'
 import FaceDemocracy from '../Images/Face_democracy.jpg'
 import PythonImage from '../Images/python.svg'
 import HtmlIcon from '../Images/html.svg'
@@ -46,7 +48,7 @@ const icons3 = [
 
 const ProjectInfo = [
     {
-        AvatarIcon: 'https://i.ibb.co/xmQnySf/Picture2.png',
+        AvatarIcon: RedBImage,
         Title: 'RedB',
         SubHeader:
             'Intelligent blood Management System for Hospitals and Blood Banks',
@@ -76,7 +78,7 @@ const ProjectInfo = [
         github_link: 'https://github.com/PolyMokashi',
     },
     {
-        AvatarIcon: 'https://i.ibb.co/qd6yWR9/pacman.png',
+        AvatarIcon: pacmanicon,
         Title: 'Pacman using C Programming',
         SubHeader: 'A classic Pacman game implemented in C',
         src: Pacman1,
