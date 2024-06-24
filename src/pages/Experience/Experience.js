@@ -3,7 +3,6 @@ import React from 'react'
 import ExperienceCard from '../../commom-components/ExperienceCard'
 import ExperienceInfo from '../../Constants/ExperienceInfo'
 import { Link } from '@mui/joy'
-import ExpCard from '../../commom-components/ExpCard'
 import ExpMobileView from '../../commom-components/ExpMobileView'
 const Experience = ({mode}) => {
     const theme = useTheme();

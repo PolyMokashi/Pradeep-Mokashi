@@ -7,8 +7,8 @@ import Typography from '@mui/joy/Typography'
 import Sheet from '@mui/joy/Sheet'
 import { AwesomeButtonSocial } from 'react-awesome-button'
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
-import poly from '../../Images/Poly.jpg'
 import { motion } from 'framer-motion'
+import Skills from '../../components/Skills'
 
 export function About() {
     const cardVariants = {
@@ -92,7 +92,11 @@ export function About() {
                         maxHeight={200}
                         sx={{ minWidth: 200 }}
                     >
-                        <img src={poly} loading="lazy" alt="" />
+                        <img
+                            src="https://i.ibb.co/FWY5B7H/Poly.jpg"
+                            loading="lazy"
+                            alt=""
+                        />
                     </AspectRatio>
                     <CardContent>
                         <Typography fontSize="xl" fontWeight="lg">
@@ -174,6 +178,7 @@ export function About() {
                     </CardContent>
                 </Card>
             </motion.div>
+            <Skills />
         </Box>
     )
 }

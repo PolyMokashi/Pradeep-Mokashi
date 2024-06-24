@@ -1,0 +1,26 @@
+const skills = [
+    'Python',
+    'R',
+    'C',
+    'Cpp',
+    'JavaScript',
+    'Machine Learning',
+    'Deep Learning',
+    'Vue.js',
+    'Node.js',
+    'MongoDB',
+    'Express.js',
+    'React.js',
+    'SQL',
+    'HTML',
+    'CSS',
+    'Google Analytics',
+    'Google Tag Manager',
+    'Redux',
+    'REST API',
+    'Material UI',
+    'Vuetify',
+    'Bootstrap',
+]
+
+export default skills;
