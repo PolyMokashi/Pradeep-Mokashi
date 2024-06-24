@@ -7,7 +7,7 @@ import Udemylogo from '../Images/Udemy.svg'
 import UdemyImg from '../Images/Image Processing Udemy_pages-to-jpg-0001.jpg'
 import UdemyImg1 from '../Images/udemyImg.jpeg'
 import Dyplogo from '../Images/d_y_patil_college_of_engineering__technology_kasaba_bawada_logo.jpg'
-import DypImage from '../Images/quiz_competition_cert (1).jpeg'
+import DypImage from '../Images/quiz_competition_cert.jpeg'
 
 const CertificatesInfo = [
     {
