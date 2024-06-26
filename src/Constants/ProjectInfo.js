@@ -1,24 +1,28 @@
-import VueIcon from '../Images/vue-js.svg'
-import NodeIcon from '../Images/nodejs.svg'
-import MongoDBIcon from '../Images/mongodb.svg'
-import ExpressIcon from '../Images/express-js.svg'
-import ReactIcon from '../Images/react.svg'
-import MUIIcon from '../Images/material-ui.svg'
-import VuetifyIcon from '../Images/vuetify.svg'
-import cIcon from '../Images/c-programming.svg'
-import pacmanicon from '../Images/pacman.png'
-import RedB from '../Images/RedB.mp4'
-import PartImage from '../Images/Part_Number.png'
-import Pacman1 from '../Images/Pacman.mp4'
-import HRmanage from '../Images/HR_management.mp4'
-import RedBImage from '../Images/Picture2.png'
-import FaceDemocracy from '../Images/Face_democracy.jpg'
-import PythonImage from '../Images/python.svg'
-import HtmlIcon from '../Images/html.svg'
-import CssIcon from '../Images/css.svg'
+import pacmanicon from '../Assets/icons/pacman.png'
+import RedB from '../Assets/videos/RedB.mp4'
+import PartImage from '../Assets/Images/Part_Number.png'
+import Pacman1 from '../Assets/videos/Pacman.mp4'
+import HRmanage from '../Assets/videos/HR_management.mp4'
+import RedBImage from '../Assets/icons/Picture2.png'
+import FaceDemocracy from '../Assets/Images/Face_democracy.jpg'
+
+const HtmlIcon = 'https://img.icons8.com/fluency/48/html-5.png'
+const CssIcon = 'https://img.icons8.com/fluency/48/css3.png'
+const JsIcon = 'https://img.icons8.com/color/48/javascript--v2.png'
+const ReactIcon = 'https://img.icons8.com/color/48/react-native.png'
+const PythonIcon = 'https://img.icons8.com/color/48/python--v1.png'
+const CIcon = 'https://img.icons8.com/color/48/c-programming.png'
+const VueIcon = 'https://img.icons8.com/color/48/vue-js.png'
+const VuetifyIcon = 'https://cdn.vuetifyjs.com/docs/images/brand-kit/v-logo-atom.svg'
+const MUIIcon = 'https://img.icons8.com/color/32/material-ui.png'
+const NodeIcon = 'https://img.icons8.com/color/48/nodejs.png'
+const MongoDBIcon = 'https://img.icons8.com/color/48/mongodb.png'
+const ExpressIcon = 'https://img.icons8.com/color/48/express-js.png'
+const MLIcon = 'https://img.icons8.com/pastel-glyph/64/brain-3--v1.png'
 
 const icons = [
     { component: VueIcon, name: 'Vue.js' },
+    { component: JsIcon, name: 'Javascript' },
     { component: NodeIcon, name: 'Node.js' },
     { component: MongoDBIcon, name: 'MongoDB' },
     { component: ExpressIcon, name: 'Express.js' },
@@ -27,16 +31,18 @@ const icons = [
 
 const icons2 = [
     { component: ReactIcon, name: 'React.js' },
+    { component: JsIcon, name: 'Javascript' },
     { component: NodeIcon, name: 'Node.js' },
     { component: MongoDBIcon, name: 'MongoDB' },
     { component: ExpressIcon, name: 'Express.js' },
     { component: MUIIcon, name: 'Material UI' },
 ]
 
-const icons1 = [{ component: cIcon, name: 'C' }]
+const icons1 = [{ component: CIcon, name: 'C' }]
 
 const icons3 = [
-    { component: PythonImage, name: 'Python' },
+    { component: PythonIcon, name: 'Python' },
+    { component: MLIcon, name: 'Machine Learning' },
     {
         component:
             'https://www.djangoproject.com/m/img/logos/django-logo-positive.png',
@@ -88,7 +94,7 @@ const ProjectInfo = [
         TechIcon: icons1,
     },
     {
-        AvatarIcon: PythonImage,
+        AvatarIcon: PythonIcon,
         Title: 'Face Democracy- Next Generation Voting',
         SubHeader: 'Online Voting System Using Facial Recognition',
         project_image: FaceDemocracy,

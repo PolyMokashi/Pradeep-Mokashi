@@ -7,7 +7,7 @@ import Typography from '@mui/joy/Typography'
 import Sheet from '@mui/joy/Sheet'
 import { AwesomeButtonSocial } from 'react-awesome-button'
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
-import poly from '../../Images/Poly.jpg'
+import poly from '../../Assets/Images/Poly.jpg'
 import { motion } from 'framer-motion'
 import Skills from '../../components/Skills'
 

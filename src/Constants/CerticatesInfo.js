@@ -1,13 +1,13 @@
-import AWSImg from '../Images/AWS_Academy_Cloud_Foundations.jpg'
-import AWSlogo from '../Images/aws-logo.svg'
-import AWSMLimg from '../Images/AWS_Academy_Graduate___AWS_Academy_Machine_Learning_Foundations.jpg'
-import IOcert from '../Images/IOcert.jpg'
-import IOlogo from '../Images/IOlogo.png'
-import Udemylogo from '../Images/Udemy.svg'
-import UdemyImg from '../Images/Image Processing Udemy_pages-to-jpg-0001.jpg'
-import UdemyImg1 from '../Images/udemyImg.jpeg'
-import Dyplogo from '../Images/d_y_patil_college_of_engineering__technology_kasaba_bawada_logo.jpg'
-import DypImage from '../Images/quiz_competition_cert.jpeg'
+import AWSImg from '../Assets/Images/AWS_Academy_Cloud_Foundations.jpg'
+import AWSlogo from '../Assets/icons/aws-logo.svg'
+import AWSMLimg from '../Assets/Images/AWS_Academy_Graduate___AWS_Academy_Machine_Learning_Foundations.jpg'
+import IOcert from '../Assets/Images/IOcert.jpg'
+import IOlogo from '../Assets/icons/IOlogo.png'
+import Udemylogo from '../Assets/icons/Udemy.svg'
+import UdemyImg from '../Assets/Images/Image Processing Udemy_pages-to-jpg-0001.jpg'
+import UdemyImg1 from '../Assets/Images/udemyImg.jpeg'
+import Dyplogo from '../Assets/icons/d_y_patil_college_of_engineering__technology_kasaba_bawada_logo.jpg'
+import DypImage from '../Assets/Images/quiz_competition_cert.jpeg'
 
 const CertificatesInfo = [
     {

@@ -6,6 +6,7 @@ import {
     IconButton,
     Divider,
 } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const Footer = ({ mode }) => {
     return (
@@ -41,6 +42,13 @@ const Footer = ({ mode }) => {
                     >
                         &copy; {new Date().getFullYear()} Pradeep Mokashi. All
                         rights reserved.
+                    </Typography>
+                    <Typography
+                        sx={{ color: 'black' }}
+                        variant="body2"
+                        component="p"
+                    >
+                        Icons by <Link to="https://icons8.com/">Icons8</Link>
                     </Typography>
                 </Grid>
                 <Grid

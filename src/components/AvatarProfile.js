@@ -1,6 +1,6 @@
 import { Avatar, Tooltip } from '@mui/material'
 import React from 'react'
-import PradeepAvatar from "../Images/image.png"
+import PradeepAvatar from "../Assets/Images/image.png"
 const AvatarProfile = () => {
   return (
       <div>

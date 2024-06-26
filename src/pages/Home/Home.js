@@ -6,8 +6,8 @@ import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email'
 import './Home.css'
 import Lottie from 'react-lottie'
-import animationData from '../../Images/Animation - 1715361331426.json'
-import animationData1 from '../../Images/Darkmode_profile.json'
+import animationData from '../../Assets/Animations/Animation - 1715361331426.json'
+import animationData1 from '../../Assets/Animations/Darkmode_profile.json'
 import { motion } from 'framer-motion'
 
 const Home = ({ mode }) => {
