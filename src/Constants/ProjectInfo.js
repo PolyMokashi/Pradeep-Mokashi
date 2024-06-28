@@ -1,4 +1,3 @@
-import pacmanicon from '../Assets/icons/pacman.png'
 import RedB from '../Assets/videos/RedB.mp4'
 import PartImage from '../Assets/Images/Part_Number.png'
 import Pacman1 from '../Assets/videos/Pacman.mp4'
@@ -19,6 +18,7 @@ const NodeIcon = 'https://img.icons8.com/color/48/nodejs.png'
 const MongoDBIcon = 'https://img.icons8.com/color/48/mongodb.png'
 const ExpressIcon = 'https://img.icons8.com/color/48/express-js.png'
 const MLIcon = 'https://img.icons8.com/pastel-glyph/64/brain-3--v1.png'
+const pacmanicon = 'https://img.icons8.com/fluency/48/pacman.png'
 
 const icons = [
     { component: VueIcon, name: 'Vue.js' },

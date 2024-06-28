@@ -11,7 +11,7 @@ import poly from '../../Assets/Images/Poly.jpg'
 import { motion } from 'framer-motion'
 import Skills from '../../components/Skills'
 
-export function About() {
+export function About({mode}) {
     const cardVariants = {
         offscreen: {
             x: -300,
@@ -175,7 +175,7 @@ export function About() {
                     </CardContent>
                 </Card>
             </motion.div>
-            <Skills/>
+            <Skills mode={mode} />
         </Box>
     )
 }
