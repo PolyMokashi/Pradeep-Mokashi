@@ -13,6 +13,13 @@ import ProjectPage from './pages/Projects/ProjectPage'
 import Experience from './pages/Experience/Experience'
 import Footer from './components/Footer'
 import AchievementsPage from './pages/AchievementsPage'
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: process.env.REACT_GTM_ID, // GTM ID for testing
+}
+TagManager.initialize(tagManagerArgs)
+
 function App() {
     const [isLoading, setIsLoading] = useState(false)
     const [mode, setMode] = useState('on')
