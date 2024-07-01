@@ -16,7 +16,8 @@ import AchievementsPage from './pages/AchievementsPage'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-    gtmId: process.env.REACT_APP_GTM_ID, // GTM ID for testing
+    gtmId: process.env.REACT_APP_GTM_ID,
+    // gtmId: 'GTM-5J7CJPPG',
 }
 TagManager.initialize(tagManagerArgs)
 
