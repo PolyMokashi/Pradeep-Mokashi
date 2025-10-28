@@ -69,7 +69,7 @@ const CustomCard = ({
                 />
                 <CardContent>
                     {src ? (
-                        <VideoPlayer src={src} autoPlay loop></VideoPlayer>
+                        <VideoPlayer src={src} ></VideoPlayer>
                     ) : (
                         <img
                             src={project_image}

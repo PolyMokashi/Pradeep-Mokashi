@@ -53,8 +53,6 @@ const CommonDrawer = ({
                             {src ? (
                                 <VideoPlayer
                                     src={src}
-                                    autoPlay
-                                    loop
                                 ></VideoPlayer>
                             ) : (
                                 <img

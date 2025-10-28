@@ -1,7 +1,7 @@
-import RedB from '../Assets/videos/RedB.mp4'
+// import RedB from '../Assets/videos/RedB.mp4'
 import PartImage from '../Assets/Images/Part_Number.png'
-import Pacman1 from '../Assets/videos/Pacman.mp4'
-import HRmanage from '../Assets/videos/HR_management.mp4'
+// import Pacman1 from '../Assets/videos/Pacman.mp4'
+// import HRmanage from '../Assets/videos/HR_management.mp4'
 import RedBImage from '../Assets/icons/Picture2.png'
 import FaceDemocracy from '../Assets/Images/Face_democracy.jpg'
 
@@ -58,7 +58,7 @@ const ProjectInfo = [
         Title: 'RedB',
         SubHeader:
             'Intelligent blood Management System for Hospitals and Blood Banks',
-        src: RedB,
+        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607704/RedB_drp0vl.mp4',
         Description:
             'RedB is a new generation technology that connects hospital administration with blood banks. RedB is a platform that connects hospital administration with blood banks. This innovative platform is designed to streamline blood bank operations and improve patient safety by ensuring timely access to blood products when needed',
         TechIcon: icons,
@@ -68,7 +68,7 @@ const ProjectInfo = [
         AvatarIcon: ReactIcon,
         Title: 'HR Management',
         SubHeader: 'Associated with HDFC ERGO General Insurance Company Ltd.',
-        src: HRmanage,
+        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/HR_management_p0icab.mp4',
         Description: `This web application is designed to streamline Human Resource (HR) processes for organizations. It utilizes the MERN stack for development and offers several functionalities for both admins and users.`,
         TechIcon: icons2,
         github_link: 'https://github.com/PolyMokashi',
@@ -87,7 +87,7 @@ const ProjectInfo = [
         AvatarIcon: pacmanicon,
         Title: 'Pacman using C Programming',
         SubHeader: 'A classic Pacman game implemented in C',
-        src: Pacman1,
+        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/Pacman_bs8oss.mp4',
         Description:
             'The outcome of this Pacman project is a fully functional and interactive game that provides users with an engaging experience as they maneuver Pacman through a maze, collect pellets, and strategize to avoid ghosts while aiming to achieve a high score. The project showcases effective game development skills in C.',
         github_link: 'https://github.com/PolyMokashi/Pacman_using_C',
