@@ -58,7 +58,7 @@ const ProjectInfo = [
         Title: 'RedB',
         SubHeader:
             'Intelligent blood Management System for Hospitals and Blood Banks',
-        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607704/RedB_drp0vl.mp4',
+        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607704/RedB_drp0vl.m3u8',
         Description:
             'RedB is a new generation technology that connects hospital administration with blood banks. RedB is a platform that connects hospital administration with blood banks. This innovative platform is designed to streamline blood bank operations and improve patient safety by ensuring timely access to blood products when needed',
         TechIcon: icons,
@@ -68,7 +68,7 @@ const ProjectInfo = [
         AvatarIcon: ReactIcon,
         Title: 'HR Management',
         SubHeader: 'Associated with HDFC ERGO General Insurance Company Ltd.',
-        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/HR_management_p0icab.mp4',
+        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/HR_management_p0icab.m3u8',
         Description: `This web application is designed to streamline Human Resource (HR) processes for organizations. It utilizes the MERN stack for development and offers several functionalities for both admins and users.`,
         TechIcon: icons2,
         github_link: 'https://github.com/PolyMokashi',
@@ -87,7 +87,7 @@ const ProjectInfo = [
         AvatarIcon: pacmanicon,
         Title: 'Pacman using C Programming',
         SubHeader: 'A classic Pacman game implemented in C',
-        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/Pacman_bs8oss.mp4',
+        src: 'https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/Pacman_bs8oss.m3u8',
         Description:
             'The outcome of this Pacman project is a fully functional and interactive game that provides users with an engaging experience as they maneuver Pacman through a maze, collect pellets, and strategize to avoid ghosts while aiming to achieve a high score. The project showcases effective game development skills in C.',
         github_link: 'https://github.com/PolyMokashi/Pacman_using_C',
