@@ -4,6 +4,16 @@ body {
 
 .App {
     transition: background-color 2s ease;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1024px) {
+    .App {
+        padding-left: 15vh;
+        padding-right: 15vh;
+    }
 }
 
 /* Define dark mode styles */

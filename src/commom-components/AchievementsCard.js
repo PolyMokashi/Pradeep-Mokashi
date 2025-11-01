@@ -99,7 +99,7 @@ function AchievementsCard({mode}) {
                         alignItems: 'center',
                         height: '100vh',
                         position: 'relative',
-                        ml: -30,
+                        ml: -70,
                     }}
                 >
                     {cardsData.map((card, index) => (
@@ -117,8 +117,8 @@ function AchievementsCard({mode}) {
                                     handleCardClick(card.id)
                                 }}
                                 sx={{
-                                    width: 500,
-                                    height: 500,
+                                    width: 450,
+                                    height: 450,
                                     padding: 2,
                                     transition:
                                         'transform 0.3s, box-shadow 0.3s',
@@ -191,16 +191,22 @@ function AchievementsCard({mode}) {
                                 />
                                 <CardMedia
                                     component="img"
+                                    height="300"
+                                    width="250"
                                     image={card.img}
                                     alt={card.title}
                                 />
-                                <CardActions>
-                                    <Link to={card.link}>
+                                <CardActions sx={{ 
+                                    justifyContent: 'center',
+                                    padding: '16px',
+                                    marginTop: 'auto'
+                                }}>
+                                    <Link to={card.link} style={{ textDecoration: 'none' }}>
                                         <CustomButton
                                             variant="text"
                                             onClick={() => {}}
                                         >
-                                            View
+                                            Click to View
                                         </CustomButton>
                                     </Link>
                                 </CardActions>

@@ -8,8 +8,8 @@ const AvatarProfile = () => {
           <Tooltip title="Pradeep Mokashi" arrow>
               <Avatar
                   sx={{
-                      width: { xs: 50, md: 82 },
-                      height: { xs: 50, md: 82 },
+                      width: { xs: 40, md: 72 },
+                      height: { xs: 40, md: 72 },
                       mt: 2,
                       ml: 2,
                       overflow: 'hidden',

@@ -35,6 +35,7 @@ function App() {
     }, [mode])
 
     useEffect(() => {
+        setIsLoading(true)
         const timeout = setTimeout(() => {
             setIsLoading(false)
         }, 1000)
@@ -67,11 +68,13 @@ function App() {
                 </div>
             )}
 
+            <div style={{ position: 'fixed', top: 0, right: 0, zIndex: 1000 }}>
+                {isNavbarVisible && (
+                    <ModeSwitch mode={mode} toggleMode={toggleMode}/>
+                )}
+            </div>
             {isNavbarVisible && <Navbar mode={mode} />}
             <AvatarProfile />
-            {isNavbarVisible && (
-                <ModeSwitch mode={mode} toggleMode={toggleMode} />
-            )}
             <Routes>
                 <Route exact path="/" element={<Home mode={mode} />} />
                 <Route exact path="/about" element={<About mode={mode} />} />

@@ -38,13 +38,37 @@ const cardVariants = {
             <Box
                 sx={{
                     display: 'flex',
+                    flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    gap: 2
                 }}
             >
                 <Typography variant="h5" color={'blueviolet'}>
                     Projects
                 </Typography>
+                <motion.div
+                    animate={{
+                        y: [0, 10, 0],
+                    }}
+                    transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                    }}
+                >
+                    <Typography 
+                        variant="subtitle1" 
+                        color={mode === 'off' ? 'white' : 'gray'}
+                        sx={{ 
+                            display: 'flex', 
+                            alignItems: 'center',
+                            gap: 1
+                        }}
+                    >
+                        Scroll to explore more projects ↓
+                    </Typography>
+                </motion.div>
             </Box>
             <Stack
                 direction="row"

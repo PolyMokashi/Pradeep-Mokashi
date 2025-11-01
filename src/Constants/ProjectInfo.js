@@ -1,6 +1,4 @@
-import PartImage from '../Assets/Images/Part_Number.png'
 import RedBImage from '../Assets/icons/Picture2.png'
-import FaceDemocracy from '../Assets/Images/Face_democracy.jpg'
 
 const HtmlIcon = 'https://img.icons8.com/fluency/48/html-5.png'
 const CssIcon = 'https://img.icons8.com/fluency/48/css3.png'
@@ -74,7 +72,7 @@ const ProjectInfo = [
         AvatarIcon: VueIcon,
         Title: 'Part Number System',
         SubHeader: 'Associated with Progneur Technologies Pvt. Ltd.',
-        project_image: PartImage,
+        project_image: 'https://iili.io/KscHyOu.md.png',
         Description:
             'A part number system is a method for uniquely identifying and organizing interchangeable parts within a supply chain or inventory management system. It helps track parts, streamline ordering, and ensure efficient assembly. Build a RESTful API with Node.js and Express.js to manage part numbers in a MongoDB database. Create a Vue.js frontend for viewing, adding, editing, and deleting part numbers with functionalities.',
         TechIcon: icons,
@@ -94,7 +92,7 @@ const ProjectInfo = [
         AvatarIcon: PythonIcon,
         Title: 'Face Democracy- Next Generation Voting',
         SubHeader: 'Online Voting System Using Facial Recognition',
-        project_image: FaceDemocracy,
+        project_image: 'https://iili.io/KscHsV4.md.jpg',
         Description:
             'In the digital era, electronic voting machines (EVMs) have emerged to address traditional voting challenges, offering faster tabulation and reduced human error. However, concerns about their security and accuracy persist, especially highlighted during the COVID-19 pandemic, which underscored the need for contactless voting methods. Integrating face-detection technology, a field of artificial intelligence and computer vision, into EVMs presents a promising solution. This technology, proven effective in various sectors for precise identification, can enhance security by verifying voter identities and preventing fraud such as impersonation and multiple voting. This integration aims to revolutionize the electoral process, making it more secure, efficient, and trustworthy.',
         TechIcon: icons3,

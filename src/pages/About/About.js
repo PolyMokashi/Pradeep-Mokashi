@@ -90,10 +90,23 @@ export function About({mode}) {
                     <AspectRatio
                         flex
                         ratio="1"
-                        maxHeight={200}
-                        sx={{ minWidth: 200 }}
+                        maxHeight={150}
+                        sx={{ 
+                            minWidth: 150,
+                            borderRadius: '8px',
+                            overflow: 'hidden'
+                        }}
                     >
-                        <img src={poly} loading="lazy" alt="" />
+                        <img 
+                            src={poly} 
+                            loading="lazy" 
+                            alt=""
+                            style={{
+                                objectFit: 'cover',
+                                width: '100%',
+                                height: '100%'
+                            }}
+                        />
                     </AspectRatio>
                     <CardContent>
                         <Typography fontSize="xl" fontWeight="lg">

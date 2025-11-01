@@ -41,7 +41,7 @@ const Home = ({ mode }) => {
     function handleCV() {
         setTimeout(() => {
             const pdfUrl =
-                'https://drive.google.com/file/d/1rrWPljg77J-RvZhhFZrpVSJIDIUWwsrY/view?usp=sharing'
+                'https://drive.google.com/file/d/1-4KF8O-h9N52YllR2BxfUChm0aOGa5nS/view?usp=sharing'
             window.open(pdfUrl, '_blank')
         }, 500)
         setClicked(true)
