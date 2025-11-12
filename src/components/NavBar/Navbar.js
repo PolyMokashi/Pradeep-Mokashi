@@ -6,6 +6,7 @@ import FolderCopyOutlinedIcon from '@mui/icons-material/FolderCopyOutlined'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined'
 import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined'
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 import './nav.css'
 
 class Nav extends Component {
@@ -55,6 +56,19 @@ class Nav extends Component {
                         }
                     >
                         <WorkOutlineOutlinedIcon fontSize="small" />
+                    </Link>
+                </Tooltip>
+                <Tooltip title="Education" placement="top">
+                    <Link
+                        to="/education"
+                        onClick={() => this.setState({ active: '/education' })}
+                        className={
+                            this.state.active === '/education'
+                                ? 'nav-link active'
+                                : 'nav-link'
+                        }
+                    >
+                        <SchoolOutlinedIcon fontSize="small" />
                     </Link>
                 </Tooltip>
                 <Tooltip title="Achievements & Certificates" placement="top">

@@ -11,13 +11,13 @@ import './Loader.css'
 import AvatarProfile from './components/AvatarProfile'
 import ProjectPage from './pages/Projects/ProjectPage'
 import Experience from './pages/Experience/Experience'
+import Education from './pages/Education/Education'
 import Footer from './components/Footer'
 import AchievementsPage from './pages/AchievementsPage'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
     gtmId: process.env.REACT_APP_GTM_ID,
-    // gtmId: 'GTM-5J7CJPPG',
 }
 TagManager.initialize(tagManagerArgs)
 
@@ -46,6 +46,7 @@ function App() {
     const isNavbarVisible = [
         '/',
         '/about',
+        '/education',
         '/achievements',
         '/projects',
         '/experience',
@@ -54,6 +55,7 @@ function App() {
     const isFooterVisible = [
         '/',
         '/about',
+        '/education',
         '/achievements',
         '/projects',
         '/experience',
@@ -87,6 +89,11 @@ function App() {
                     exact
                     path="/experience"
                     element={<Experience mode={mode} />}
+                />
+                <Route
+                    exact
+                    path="/education"
+                    element={<Education mode={mode} />}
                 />
                 <Route
                     exact
