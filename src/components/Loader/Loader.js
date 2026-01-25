@@ -1,58 +1,24 @@
-import { motion } from "framer-motion";
+import Lottie from 'react-lottie'
+import loadingAnimation from '../../Assets/Animations/loading_animation.json'
 
-const colors = ["#22238f", "#6b45fa", "#ca3286", "#fe2b49", "#fe652d"];
-
-const containerVariants = {
-  initial: {},
-  animate: {
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.1
-    }
+const Loader = ({ width = 220, height = 220, text = 'Loading portfolio...' }) => {
+  const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: loadingAnimation,
+      rendererSettings: {
+          preserveAspectRatio: 'xMidYMid meet',
+      },
   }
-};
 
-const dotVariants = {
-  initial: {},
-  animate: {
-    height: [40, 100, 40],
-    transition: {
-      repeat: Infinity
-    }
-  }
-};
-
-const Loader = ({ count = 5 }) => {
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="initial"
-      animate="animate"
-      style={{
-        display: "flex",
-        gap: 14,
-        height: 100,
-        alignItems: "center"
-      }}
-    >
-      {Array(count)
-        .fill(null)
-        .map((_, index) => {
-          return (
-            <motion.div
-              key={index}
-              variants={dotVariants}
-              style={{
-                height: 25,
-                width: 25,
-                backgroundColor: colors[index % colors.length],
-                borderRadius: 10
-              }}
-            />
-          );
-        })}
-    </motion.div>
-  );
-};
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <div style={{ width, height }}>
+        <Lottie options={defaultOptions} height={height} width={width} />
+      </div>
+      <div style={{ color: '#888', fontSize: 14 }}>{text}</div>
+    </div>
+  )
+}
 
-export default Loader;
+export default Loader

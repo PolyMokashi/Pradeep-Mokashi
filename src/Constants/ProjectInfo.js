@@ -1,5 +1,6 @@
 import RedBImage from '../Assets/icons/Picture2.png'
 
+const AnalysisIcon = 'https://img.icons8.com/fluency/48/fine-print.png'
 const HtmlIcon = 'https://img.icons8.com/fluency/48/html-5.png'
 const CssIcon = 'https://img.icons8.com/fluency/48/css3.png'
 const JsIcon = 'https://img.icons8.com/color/48/javascript--v2.png'
@@ -47,7 +48,58 @@ const icons3 = [
     { component: CssIcon, name: 'CSS3' },
 ]
 
+const icons4 = [
+    { component: PythonIcon, name: 'Python' },
+    {
+        component: 'https://img.icons8.com/color/48/tensorflow.png',
+        name: 'TensorFlow',
+    },
+    {
+        component: 'https://img.icons8.com/material-rounded/24/keras.png',
+        name: 'Keras',
+    },
+    {
+        component:
+            'https://pypi-camo.freetls.fastly.net/b86b2758380b6bc7cbdf4ff97fda9826a3b74aa2/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7363696b69742d6c6561726e2f7363696b69742d6c6561726e2f6d61696e2f646f632f6c6f676f732f7363696b69742d6c6561726e2d6c6f676f2e706e67',
+        name: 'Scikit-learn',
+    },
+    {
+        component:
+            'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*-dNH8WI8Oy3etClaRvRCgw.png',
+        name: 'NLTK',
+    },
+    { component: MLIcon, name: 'BERT' },
+    {
+        component: 'https://img.icons8.com/color/48/matplotlib.png',
+        name: 'Matplotlib',
+    },
+    {
+        component: 'https://img.icons8.com/color/48/pandas.png',
+        name: 'Pandas',
+    },
+    {
+        component: 'https://jupyter.org/assets/homepage/main-logo.svg',
+        name: 'Jupyter',
+    },
+]
+
 const ProjectInfo = [
+    {
+        AvatarIcon: AnalysisIcon,
+        Title: 'AI in Finance',
+        SubHeader:
+            'Modeling Stock Price Movements Using Machine Learning and Sentiment Analysis',
+        src: '/JETIR2507277.pdf',
+        project_image: '/JETIR2507277_Certificate-images-0.jpg',
+        Description: [
+            'Models: Implemented Random Forest, LSTM, and a Hybrid LSTM + Sentiment model.',
+            'Data Sources: Used historical stock data and real-time text from Google News, Reddit, and Twitter.',
+            'Sentiment Analysis: Employed VADER and BERT for sentiment scoring.',
+            'Performance: Hybrid LSTM + Sentiment model showed superior accuracy with lowest RMSE and MAE, demonstrating the value of sentiment integration.',
+        ],
+        TechIcon: icons4,
+        github_link: 'https://www.jetir.org/view?paper=JETIR2507277',
+    },
     {
         AvatarIcon: RedBImage,
         Title: 'RedB',

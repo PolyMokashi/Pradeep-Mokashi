@@ -1,11 +1,26 @@
 body {
     font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .App {
-    transition: background-color 2s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
     padding-left: 2vh;
     padding-right: 2vh;
+    min-height: 100vh;
+}
+
+/* Light mode - subtle gradient */
+.light-mode {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 50%, #f0f4f8 100%);
+    color: #333;
+}
+
+/* Dark mode - rich gradient */
+.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f1a 100%);
+    color: #fff;
 }
 
 /* Desktop styles */
@@ -16,8 +31,43 @@ body {
     }
 }
 
-/* Define dark mode styles */
-.dark-mode {
-    background-color: #333;
-    color: #fff;
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark mode */
+.dark-mode::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+    background: #16213e;
+}
+
+.dark-mode::-webkit-scrollbar-thumb {
+    background: #4a4e69;
+    border-radius: 4px;
+}
+
+.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #6c757d;
+}
+
+/* Light mode scrollbar */
+.light-mode::-webkit-scrollbar {
+    width: 8px;
+}
+
+.light-mode::-webkit-scrollbar-track {
+    background: #f0f4f8;
+}
+
+.light-mode::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 4px;
+}
+
+.light-mode::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
 }

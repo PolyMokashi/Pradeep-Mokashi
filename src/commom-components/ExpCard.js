@@ -1,4 +1,4 @@
-import { Avatar, Card, CardActions, CardContent, CardHeader, IconButton, Stack, Typography } from '@mui/material'
+import { Avatar, Card, CardActions, CardContent, CardHeader, IconButton, Stack, Typography, Box } from '@mui/material'
 import React from 'react'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
 import { Chip } from '@mui/joy'
@@ -8,7 +8,20 @@ const ExpCard = ({ CompanyLogo, CompanyName, Role, Description,TechIcon, mode })
         <>
             <Card variant="outlined" sx={{ background: 'transparent', width:"100%" }}>
                 <CardHeader
-                    avatar={<Avatar src={CompanyLogo} />}
+                    avatar={
+                        <Box
+                            component="img"
+                            src={CompanyLogo}
+                            sx={{
+                                width: 56,
+                                height: 56,
+                                borderRadius: '50%',
+                                objectFit: 'scale-down',
+                                backgroundColor: '#f5f5f5',
+                                padding: '2px'
+                            }}
+                        />
+                    }
                     action={
                         <IconButton aria-label="settings">
                             <ArrowOutwardIcon />

@@ -30,10 +30,12 @@ export function About({mode}) {
     return (
         <Box
             sx={{
-                width: { md: '60%' },
+                width: { xs: '100%', md: '60%' },
                 position: 'relative',
-                ml: { md: 25 },
-                overflow: { xs: 'auto', sm: 'initial' },
+                marginLeft: { xs: 'auto', md: '200px' },
+                marginRight: 'auto',
+                px: { xs: 2, sm: 0 },
+                overflow: 'hidden',
                 my: 4,
             }}
         >
@@ -45,7 +47,7 @@ export function About({mode}) {
                 <Box
                     sx={{
                         position: 'absolute',
-                        display: 'block',
+                        display: { xs: 'none', md: 'block' },
                         bgcolor: 'warning.300',
                         left: '500px',
                         top: '-24px',
@@ -82,19 +84,19 @@ export function About({mode}) {
                             minWidth:
                                 'clamp(0px, (calc(var(--stack-point) - 2 * var(--Card-padding) - 2 * var(--variant-borderWidth, 0px)) + 1px - 100%) * 999, 100%)',
                         },
-                        // make the card resizable for demo
-                        overflow: 'auto',
-                        resize: 'horizontal',
                     }}
                 >
                     <AspectRatio
                         flex
                         ratio="1"
-                        maxHeight={150}
                         sx={{ 
-                            minWidth: 150,
+                            minWidth: { xs: '100%', sm: 150 },
+                            maxHeight: { xs: 'none', sm: 150 },
                             borderRadius: '8px',
-                            overflow: 'hidden'
+                            overflow: 'hidden',
+                            '& img': {
+                                objectFit: { xs: 'contain', sm: 'cover' },
+                            }
                         }}
                     >
                         <img 
@@ -102,22 +104,21 @@ export function About({mode}) {
                             loading="lazy" 
                             alt=""
                             style={{
-                                objectFit: 'cover',
                                 width: '100%',
                                 height: '100%'
                             }}
                         />
                     </AspectRatio>
-                    <CardContent>
+                    <CardContent sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
                         <Typography fontSize="xl" fontWeight="lg">
-                            Pradeep Mokashi
+                            Pradeep Dilip Mokashi
                         </Typography>
                         <Typography
                             level="body-sm"
                             fontWeight="lg"
                             textColor="text.tertiary"
                         >
-                            Software Developer
+                            AI-ML Developer | Full Stack Developer
                         </Typography>
                         <Sheet
                             sx={{
@@ -134,7 +135,7 @@ export function About({mode}) {
                                 <Typography level="body-xs" fontWeight="lg">
                                     Projects
                                 </Typography>
-                                <Typography fontWeight="lg">11</Typography>
+                                <Typography fontWeight="lg">14</Typography>
                             </div>
                             <div>
                                 <Typography level="body-xs" fontWeight="lg">
@@ -146,7 +147,7 @@ export function About({mode}) {
                                 <Typography level="body-xs" fontWeight="lg">
                                     Experience
                                 </Typography>
-                                <Typography fontWeight="lg">1 year</Typography>
+                                <Typography fontWeight="lg">1+ years</Typography>
                             </div>
                         </Sheet>
                         <Box
@@ -154,6 +155,7 @@ export function About({mode}) {
                                 display: 'flex',
                                 gap: 1.5,
                                 flexWrap: 'wrap',
+                                justifyContent: { xs: 'center', sm: 'flex-start' },
                             }}
                         >
                             <AwesomeButtonSocial

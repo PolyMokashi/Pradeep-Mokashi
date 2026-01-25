@@ -24,10 +24,19 @@ const ExpMobileView = ({
             sx={{ p: 3, m: 2, boxShadow: 3, borderRadius: 2 }}
         >
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <img
+                <Box
+                    component="img"
                     src={CompanyLogo}
                     alt={`${CompanyName} logo`}
-                    style={{ width: '50px', marginRight: '16px' }}
+                    sx={{
+                        width: '50px',
+                        height: '50px',
+                        marginRight: '16px',
+                        borderRadius: '50%',
+                        objectFit: 'scale-down',
+                        backgroundColor: '#f5f5f5',
+                        padding: '2px'
+                    }}
                 />
                 <Box>
                     <Typography variant="h5">{Role}</Typography>

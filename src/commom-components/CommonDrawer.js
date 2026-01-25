@@ -4,6 +4,7 @@ import PublicIcon from '@mui/icons-material/Public';
 import { Link } from 'react-router-dom';
 import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded'
 import VideoPlayer from './VideoPlayer';
+import PdfViewer from './PdfViewer';
 
 const CommonDrawer = ({
     open,
@@ -51,9 +52,14 @@ const CommonDrawer = ({
                             }}
                         >
                             {src ? (
-                                <VideoPlayer
-                                    src={src}
-                                ></VideoPlayer>
+                                // If the src is a PDF, use PdfViewer component for page navigation
+                                String(src).toLowerCase().includes('.pdf') ? (
+                                    <PdfViewer src={src} mode={mode} />
+                                ) : (
+                                    <VideoPlayer
+                                        src={src}
+                                    ></VideoPlayer>
+                                )
                             ) : (
                                 <img
                                     src={project_image}
@@ -70,7 +76,15 @@ const CommonDrawer = ({
                                 About
                             </Typography>
                             <Typography level="body-md" sx={TypoStyle}>
-                                {Description}
+                                {Array.isArray(Description) ? (
+                                    <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
+                                        {Description.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    Description
+                                )}
                             </Typography>
                         </Box>
                         <Box sx={{ mt: 2 }}>
@@ -134,7 +148,7 @@ const CommonDrawer = ({
                             }
                             href={github_link}
                         >
-                            GitHub
+                            View
                         </Button>
                     ) : (
                         <Button
@@ -146,7 +160,7 @@ const CommonDrawer = ({
                             }
                             href={Project_link}
                         >
-                            Launch Website
+                            View Website
                         </Button>
                     )}
                 </CardActions>

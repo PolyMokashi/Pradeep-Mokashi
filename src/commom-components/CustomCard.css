@@ -1,20 +1,69 @@
 .mycard {
-    box-sizing: border-box;
-    background: rgba(217, 217, 217, 0.58);
-    border: 1px solid white;
-    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-    border-radius: 17px;
-    transition: all 0.5s;
-    /* user-select: none; */
-    font-weight: bolder;
-    color: black;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 16px !important;
+    overflow: hidden;
 }
 
 .mycard:hover {
-    border: 1px solid black;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(138, 43, 226, 0.2) !important;
+}
+
+/* Image container with fade-in */
+.mycard img {
+    transition: opacity 0.5s ease-in-out, transform 0.4s ease;
+    opacity: 1;
+}
+
+.mycard:hover img {
     transform: scale(1.05);
 }
 
-.mycard:active {
-    transform: scale(0.95) rotateZ(1.7deg);
+/* Loading shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.image-loading {
+    background: linear-gradient(90deg,
+            #f0f0f0 0px,
+            #e0e0e0 40px,
+            #f0f0f0 80px);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Fade in animation for images */
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-loaded {
+    animation: fadeInImage 0.5s ease-out;
+}
+
+/* Card content spacing */
+.mycard .MuiCardContent-root {
+    padding: 16px !important;
+}
+
+/* Improved button styling */
+.mycard .MuiCardActions-root {
+    padding: 8px 16px 16px !important;
 }

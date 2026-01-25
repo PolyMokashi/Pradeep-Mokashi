@@ -38,8 +38,7 @@ function App() {
         setIsLoading(true)
         const timeout = setTimeout(() => {
             setIsLoading(false)
-        }, 1000)
-        setIsLoading(true)
+        }, 500)
         return () => clearTimeout(timeout)
     }, [location])
 

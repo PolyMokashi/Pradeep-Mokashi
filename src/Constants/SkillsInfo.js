@@ -19,7 +19,7 @@ const PGSQLIcon = 'https://img.icons8.com/color/48/postgreesql.png'
 
 const skills = [
     { name: 'Python', icon: PythonIcon },
-    { name: 'Machine Learning', icon: MLIcon },
+    { name: 'ML', icon: MLIcon },
     { name: 'OpenCV', icon: OpenCVIcon },
     { name:'PyTorch', icon: PyTorchIcon },
     { name: 'TensorFlow', icon: TensorflowIcon },
@@ -32,7 +32,7 @@ const skills = [
     { name: 'MongoDB', icon: MongoDBIcon },
     { name: 'Express.js', icon: ExpressIcon },
     { name: 'Google Analytics', icon: GAIcon },
-    { name: 'Google Tag Manager', icon: GTMIcon },
+    { name: 'GTM', icon: GTMIcon },
     { name: 'R', icon: RIcon },
     { name: 'SQL', icon: sqlIcon },
     { name: 'PostgreSQL', icon: PGSQLIcon },

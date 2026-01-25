@@ -41,7 +41,7 @@ const Home = ({ mode }) => {
     function handleCV() {
         setTimeout(() => {
             const pdfUrl =
-                'https://drive.google.com/file/d/1-4KF8O-h9N52YllR2BxfUChm0aOGa5nS/view?usp=sharing'
+                'https://drive.google.com/file/d/1S4wN0CYD-6y2MN0Jf81C3_LBGjAbBZwU/view?usp=sharing'
             window.open(pdfUrl, '_blank')
         }, 500)
         setClicked(true)
@@ -57,10 +57,25 @@ const Home = ({ mode }) => {
             <Grid container alignItems="center" justifyContent="center">
                 <Grid item xs={12}>
                     <Box sx={{ ml: { xs: 0, sm: 5, md: 10, lg: 20 }, my: 2 }}>
-                        <Typography variant="body1" color="red">
+                        <Typography 
+                            variant="body2" 
+                            sx={{ 
+                                color: 'rgba(255, 0, 0, 0.2)', 
+                                fontFamily: '"Fira Code", "Courier New", monospace',
+                                fontSize: '0.7rem'
+                            }}
+                        >
                             {'<html>'}
                         </Typography>
-                        <Typography variant="body1" color="orange">
+                        <Typography 
+                            variant="body2" 
+                            sx={{ 
+                                color: 'rgba(255, 165, 0, 0.2)', 
+                                fontFamily: '"Fira Code", "Courier New", monospace',
+                                fontSize: '0.7rem',
+                                ml: 2
+                            }}
+                        >
                             {'<body>'}
                         </Typography>
                     </Box>
@@ -153,10 +168,25 @@ const Home = ({ mode }) => {
                         }}
                     >
                         <Box>
-                            <Typography variant="body1" color="orange">
+                            <Typography 
+                                variant="body2" 
+                                sx={{ 
+                                    color: 'rgba(255, 165, 0, 0.2)', 
+                                    fontFamily: '"Fira Code", "Courier New", monospace',
+                                    fontSize: '0.7rem',
+                                    mr: 2
+                                }}
+                            >
                                 {'</body>'}
                             </Typography>
-                            <Typography variant="body1" color="red">
+                            <Typography 
+                                variant="body2" 
+                                sx={{ 
+                                    color: 'rgba(255, 0, 0, 0.2)', 
+                                    fontFamily: '"Fira Code", "Courier New", monospace',
+                                    fontSize: '0.7rem'
+                                }}
+                            >
                                 {'</html>'}
                             </Typography>
                         </Box>

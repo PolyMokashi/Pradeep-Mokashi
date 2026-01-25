@@ -32,32 +32,6 @@ class Nav extends Component {
                     </Link>
                 </Tooltip>
 
-                <Tooltip title="Projects" placement="top">
-                    <Link
-                        to="/projects"
-                        onClick={() => this.setState({ active: '/projects' })}
-                        className={
-                            this.state.active === '/projects'
-                                ? 'nav-link active'
-                                : 'nav-link'
-                        }
-                    >
-                        <FolderCopyOutlinedIcon fontSize="small" />
-                    </Link>
-                </Tooltip>
-                <Tooltip title="Experience" placement="top">
-                    <Link
-                        to="/experience"
-                        onClick={() => this.setState({ active: '/experience' })}
-                        className={
-                            this.state.active === '/experience'
-                                ? 'nav-link active'
-                                : 'nav-link'
-                        }
-                    >
-                        <WorkOutlineOutlinedIcon fontSize="small" />
-                    </Link>
-                </Tooltip>
                 <Tooltip title="Education" placement="top">
                     <Link
                         to="/education"
@@ -71,6 +45,35 @@ class Nav extends Component {
                         <SchoolOutlinedIcon fontSize="small" />
                     </Link>
                 </Tooltip>
+
+                <Tooltip title="Projects" placement="top">
+                    <Link
+                        to="/projects"
+                        onClick={() => this.setState({ active: '/projects' })}
+                        className={
+                            this.state.active === '/projects'
+                                ? 'nav-link active'
+                                : 'nav-link'
+                        }
+                    >
+                        <FolderCopyOutlinedIcon fontSize="small" />
+                    </Link>
+                </Tooltip>
+
+                <Tooltip title="Experience" placement="top">
+                    <Link
+                        to="/experience"
+                        onClick={() => this.setState({ active: '/experience' })}
+                        className={
+                            this.state.active === '/experience'
+                                ? 'nav-link active'
+                                : 'nav-link'
+                        }
+                    >
+                        <WorkOutlineOutlinedIcon fontSize="small" />
+                    </Link>
+                </Tooltip>
+
                 <Tooltip title="Achievements & Certificates" placement="top">
                     <Link
                         to="/achievements"
@@ -86,6 +89,7 @@ class Nav extends Component {
                         <EmojiEventsOutlinedIcon fontSize="small" />
                     </Link>
                 </Tooltip>
+
                 <Tooltip title="About me" placement="top">
                     <Link
                         to="/about"

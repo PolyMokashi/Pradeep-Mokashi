@@ -14,8 +14,8 @@ const CertificatesInfo = [
         ava_icon:
             'https://cdn.theforage.com/vinternships/companyassets/SKZxezskWgmFjRvj9/BqF6gmrmLunCkdqKM/1710332417845/01-bcgx-logo-color-positive-RGB-small.png',
         link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/BCG%20/gabev3vXhuACr48eb_BCG_SKZpDgrDYkMhs5NtJ_1725110112812_completion_certificate.pdf',
-        title: 'Building AI Agents with Tools',
-        subheader: 'Hugging Face',
+        title: 'GenAI Job Simulation',
+        subheader: 'BCGX',
         img: 'https://iili.io/KsciWmB.md.jpg',
     },
     {
