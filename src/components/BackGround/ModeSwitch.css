@@ -23,9 +23,9 @@ body {
 } */
 #switch {
     position: relative;
-    margin: 20px;
-    width: 115px;
-    height: 48px;
+    /* margin: 5px; */
+    width: 120px;
+    height: 45px;
     border-radius: 70px;
     border-width: 5px;
     border-style: solid;
@@ -38,6 +38,7 @@ body {
 @media screen and (min-width: 1024px) {
    #switch {
      margin-right: 20vh;
+     margin-top: 15px;
    }
 }
  

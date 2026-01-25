@@ -135,13 +135,13 @@ export function About({mode}) {
                                 <Typography level="body-xs" fontWeight="lg">
                                     Projects
                                 </Typography>
-                                <Typography fontWeight="lg">14</Typography>
+                                <Typography fontWeight="lg">12</Typography>
                             </div>
                             <div>
                                 <Typography level="body-xs" fontWeight="lg">
                                     Certificates
                                 </Typography>
-                                <Typography fontWeight="lg">12</Typography>
+                                <Typography fontWeight="lg">8</Typography>
                             </div>
                             <div>
                                 <Typography level="body-xs" fontWeight="lg">
