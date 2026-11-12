@@ -1,47 +1,23 @@
 # Pradeep Mokashi Portfolio
 
-This React portfolio reads its projects, certificates, education, experience,
-skills, profile links, and media references from a small SQLite-backed API.
-Images and documents in `src/Assets` and `public` are served by the API from
-their existing files; remote images and hosted videos remain URL references in
-the database seed.
+This repository contains the React frontend. Its API and SQLite backend live
+in the separate [Portfolio_Backend repository](https://github.com/PolyMokashi/Portfolio_Backend).
 
 ## Run locally
 
-Use Python 3 and Node.js/npm. No extra Python packages are needed.
-
-1. In one terminal, start the API:
-
-   ```sh
-   npm run backend
-   ```
-
-   The API initializes `server/portfolio.sqlite3` from
-   `server/portfolio.json` the first time it runs and listens on
+1. Start the backend by following the instructions in the
+   [backend README](https://github.com/PolyMokashi/Portfolio_Backend#readme).
+   The frontend development server proxies `/api` and `/media` requests to
    `http://127.0.0.1:5000`.
-
-2. In another terminal, start the React app:
+2. Install frontend dependencies with `npm install`, then start the app:
 
    ```sh
    npm start
    ```
 
-   The development server proxies API and `/media` requests to the backend.
-
-The database is seeded only for missing sections, so edits made in SQLite are
-preserved when the backend restarts. To restore seed content for a section,
-delete that section from the `portfolio_sections` table and restart the API.
-
-## API
-
-- `GET /api/health` — backend status
-- `GET /api/portfolio` — all portfolio sections
-- `GET /api/portfolio/{section}` — one of `profile`, `projects`,
-  `certificates`, `education`, `experience`, or `skills`
-- `GET /media/{path}` — local images, animations, and public documents
-
-The API binds to localhost by default. Set `PORTFOLIO_HOST`, `PORTFOLIO_PORT`,
-or `PORTFOLIO_DB_PATH` to override the host, port, or SQLite database file.
+For production, deploy the backend separately and configure Vercel rewrites for
+`/api/*` and `/media/*` to the backend URL. See the backend README for an
+example.
 
 ## Existing React scripts
 
