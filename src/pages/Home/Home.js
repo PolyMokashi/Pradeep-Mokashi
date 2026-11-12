@@ -6,24 +6,24 @@ import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email'
 import './Home.css'
 import Lottie from 'react-lottie'
-import animationData from '../../Assets/Animations/Animation - 1715361331426.json'
-import animationData1 from '../../Assets/Animations/Darkmode_profile.json'
 import { motion } from 'framer-motion'
+import useRemoteAnimation from '../../hooks/useRemoteAnimation'
 
 const Home = ({ mode, profile }) => {
     const [, setClicked] = useState(false)
     const [clicked1, setClicked1] = useState(false)
     const theme = useTheme()
     const isXsScreen = useMediaQuery(theme.breakpoints.down('sm'))
+    const animationUrl =
+        mode === 'on'
+            ? '/media/Animations/Animation - 1715361331426.json'
+            : '/media/Animations/Darkmode_profile.json'
+    const { animationData, error: animationError } =
+        useRemoteAnimation(animationUrl)
     const defaultOptions = {
         loop: true,
         autoplay: true,
         animationData: animationData,
-    }
-    const defaultOptions1 = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData1,
     }
     function handleMail() {
         setTimeout(() => {
@@ -97,11 +97,13 @@ const Home = ({ mode, profile }) => {
                                 height: '30dvh',
                             }}
                         >
-                            {mode === 'on' ? (
+                            {animationData ? (
                                 <Lottie options={defaultOptions} />
-                            ) : (
-                                <Lottie options={defaultOptions1} />
-                            )}
+                            ) : animationError ? (
+                                <Typography role="alert">
+                                    Animation could not be loaded: {animationError}
+                                </Typography>
+                            ) : null}
                         </Box>
                     </motion.div>
                     <Box

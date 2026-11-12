@@ -2,6 +2,8 @@
 
 This repository contains the React frontend. Its API and SQLite backend live
 in the separate [Portfolio_Backend repository](https://github.com/PolyMokashi/Portfolio_Backend).
+Profile and project media, icons, animations, documents, and the favicon load
+from the backend API rather than this repository.
 
 ## Run locally
 

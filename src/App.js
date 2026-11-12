@@ -57,7 +57,11 @@ function App() {
                 return response.json()
             })
             .then((data) => {
-                if (!data.profile || !Array.isArray(data.projects)) {
+                if (
+                    !data.profile ||
+                    !Array.isArray(data.projects) ||
+                    !Array.isArray(data.footerLinks)
+                ) {
                     throw new Error('Portfolio API returned incomplete content')
                 }
                 setPortfolio(data)
@@ -164,7 +168,13 @@ function App() {
                 />
                 <Route exact path="*" element={<Error mode={mode} />} />
             </Routes>
-            {isFooterVisible && <Footer mode={mode} />}
+            {isFooterVisible && (
+                <Footer
+                    mode={mode}
+                    name={portfolio.profile.name}
+                    links={portfolio.footerLinks}
+                />
+            )}
         </div>
     )
 }

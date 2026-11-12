@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-const Footer = ({ mode }) => {
+const Footer = ({ mode, name, links }) => {
     return (
         <Box
             component="footer"
@@ -51,66 +51,32 @@ const Footer = ({ mode }) => {
                             textOverflow: 'ellipsis',
                         }}
                     >
-                        &copy; {new Date().getFullYear()} Pradeep Mokashi. All rights reserved.
+                        &copy; {new Date().getFullYear()} {name}. All rights reserved.
                     </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                    <IconButton 
-                        href="https://x.com/Poly_Mokashi12" 
-                        color="inherit" 
-                        aria-label="twitter"
-                        sx={{ 
-                            transition: 'transform 0.3s ease',
-                            '&:hover': { transform: 'translateY(-3px) scale(1.1)' }
-                        }}
-                    >
-                        <img width="28" height="28" src="https://img.icons8.com/color/48/twitterx--v1.png" alt="twitter" />
-                    </IconButton>
-                    <IconButton 
-                        href="https://m.facebook.com/PradeepMokashi0/" 
-                        color="inherit" 
-                        aria-label="facebook"
-                        sx={{ 
-                            transition: 'transform 0.3s ease',
-                            '&:hover': { transform: 'translateY(-3px) scale(1.1)' }
-                        }}
-                    >
-                        <img width="28" height="28" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook" />
-                    </IconButton>
-                    <IconButton 
-                        href="https://www.instagram.com/poly_mokashi" 
-                        color="inherit" 
-                        aria-label="instagram"
-                        sx={{ 
-                            transition: 'transform 0.3s ease',
-                            '&:hover': { transform: 'translateY(-3px) scale(1.1)' }
-                        }}
-                    >
-                        <img width="28" height="28" src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="instagram" />
-                    </IconButton>
-                    <IconButton 
-                        href="https://github.com/PolyMokashi" 
-                        color="inherit" 
-                        aria-label="github"
-                        sx={{ 
-                            transition: 'transform 0.3s ease',
-                            '&:hover': { transform: 'translateY(-3px) scale(1.1)' }
-                        }}
-                    >
-                        <img width="28" height="28" src="https://img.icons8.com/ios-filled/50/github.png" alt="github" />
-                    </IconButton>
-                    <IconButton 
-                        href="https://www.linkedin.com/in/pradeep-mokashi" 
-                        color="inherit" 
-                        aria-label="linkedin"
-                        sx={{ 
-                            transition: 'transform 0.3s ease',
-                            '&:hover': { transform: 'translateY(-3px) scale(1.1)' }
-                        }}
-                    >
-                        <img width="28" height="28" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" />
-                    </IconButton>
+                    {links.map((link) => (
+                        <IconButton
+                            key={link.label}
+                            href={link.url}
+                            color="inherit"
+                            aria-label={link.label}
+                            sx={{
+                                transition: 'transform 0.3s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-3px) scale(1.1)',
+                                },
+                            }}
+                        >
+                            <img
+                                width="28"
+                                height="28"
+                                src={link.icon}
+                                alt=""
+                            />
+                        </IconButton>
+                    ))}
                 </Box>
                     <Typography
                         variant="body2"
