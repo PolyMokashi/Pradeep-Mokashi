@@ -1,10 +1,51 @@
-# Getting Started with Create React App
+# Pradeep Mokashi Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React portfolio reads its projects, certificates, education, experience,
+skills, profile links, and media references from a small SQLite-backed API.
+Images and documents in `src/Assets` and `public` are served by the API from
+their existing files; remote images and hosted videos remain URL references in
+the database seed.
 
-## Available Scripts
+## Run locally
 
-In the project directory, you can run:
+Use Python 3 and Node.js/npm. No extra Python packages are needed.
+
+1. In one terminal, start the API:
+
+   ```sh
+   npm run backend
+   ```
+
+   The API initializes `server/portfolio.sqlite3` from
+   `server/portfolio.json` the first time it runs and listens on
+   `http://127.0.0.1:5000`.
+
+2. In another terminal, start the React app:
+
+   ```sh
+   npm start
+   ```
+
+   The development server proxies API and `/media` requests to the backend.
+
+The database is seeded only for missing sections, so edits made in SQLite are
+preserved when the backend restarts. To restore seed content for a section,
+delete that section from the `portfolio_sections` table and restart the API.
+
+## API
+
+- `GET /api/health` — backend status
+- `GET /api/portfolio` — all portfolio sections
+- `GET /api/portfolio/{section}` — one of `profile`, `projects`,
+  `certificates`, `education`, `experience`, or `skills`
+- `GET /media/{path}` — local images, animations, and public documents
+
+The API binds to localhost by default. Set `PORTFOLIO_HOST`, `PORTFOLIO_PORT`,
+or `PORTFOLIO_DB_PATH` to override the host, port, or SQLite database file.
+
+## Existing React scripts
+
+The frontend was bootstrapped with Create React App.
 
 ### `npm start`
 

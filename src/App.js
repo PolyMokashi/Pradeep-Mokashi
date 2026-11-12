@@ -25,6 +25,9 @@ function App() {
     const [isLoading, setIsLoading] = useState(false)
     const [mode, setMode] = useState('on')
     const location = useLocation()
+    const [portfolio, setPortfolio] = useState(null)
+    const [contentError, setContentError] = useState('')
+    const [reloadContent, setReloadContent] = useState(0)
 
     const toggleMode = () => {
         setMode((prevMode) => (prevMode === 'off' ? 'on' : 'off'))
@@ -41,6 +44,32 @@ function App() {
         }, 500)
         return () => clearTimeout(timeout)
     }, [location])
+
+    useEffect(() => {
+        const controller = new AbortController()
+        setContentError('')
+
+        fetch('/api/portfolio', { signal: controller.signal })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Portfolio API returned ${response.status}`)
+                }
+                return response.json()
+            })
+            .then((data) => {
+                if (!data.profile || !Array.isArray(data.projects)) {
+                    throw new Error('Portfolio API returned incomplete content')
+                }
+                setPortfolio(data)
+            })
+            .catch((error) => {
+                if (error.name !== 'AbortError') {
+                    setContentError(error.message)
+                }
+            })
+
+        return () => controller.abort()
+    }, [reloadContent])
 
     const isNavbarVisible = [
         '/',
@@ -59,6 +88,28 @@ function App() {
         '/projects',
         '/experience',
     ].includes(location.pathname)
+
+    if (!portfolio) {
+        return (
+            <div className={`App ${mode === 'off' ? 'dark-mode' : 'light-mode'}`}>
+                {contentError ? (
+                    <div role="alert" style={{ maxWidth: 560, margin: '20vh auto', padding: 24 }}>
+                        <p>Portfolio content could not be loaded: {contentError}</p>
+                        <button type="button" onClick={() => setReloadContent((value) => value + 1)}>
+                            Retry
+                        </button>
+                    </div>
+                ) : (
+                    <div className="overlay">
+                        <div className="centered">
+                            <Loader />
+                        </div>
+                    </div>
+                )}
+            </div>
+        )
+    }
+
     return (
         <div className={`App ${mode === 'off' ? 'dark-mode' : 'light-mode'}`}>
             {isLoading && (
@@ -75,29 +126,41 @@ function App() {
                 )}
             </div>
             {isNavbarVisible && <Navbar mode={mode} />}
-            <AvatarProfile />
+            <AvatarProfile profile={portfolio.profile} />
             <Routes>
-                <Route exact path="/" element={<Home mode={mode} />} />
-                <Route exact path="/about" element={<About mode={mode} />} />
+                <Route exact path="/" element={<Home mode={mode} profile={portfolio.profile} />} />
+                <Route
+                    exact
+                    path="/about"
+                    element={
+                        <About
+                            mode={mode}
+                            profile={portfolio.profile}
+                            skills={portfolio.skills}
+                            projectCount={portfolio.projects.length}
+                            certificateCount={portfolio.certificates.length}
+                        />
+                    }
+                />
                 <Route
                     exact
                     path="/projects"
-                    element={<ProjectPage mode={mode} />}
+                    element={<ProjectPage mode={mode} projects={portfolio.projects} />}
                 />
                 <Route
                     exact
                     path="/experience"
-                    element={<Experience mode={mode} />}
+                    element={<Experience mode={mode} experience={portfolio.experience} />}
                 />
                 <Route
                     exact
                     path="/education"
-                    element={<Education mode={mode} />}
+                    element={<Education mode={mode} education={portfolio.education} />}
                 />
                 <Route
                     exact
                     path="/achievements"
-                    element={<AchievementsPage mode={mode} />}
+                    element={<AchievementsPage mode={mode} certificates={portfolio.certificates} />}
                 />
                 <Route exact path="*" element={<Error mode={mode} />} />
             </Routes>

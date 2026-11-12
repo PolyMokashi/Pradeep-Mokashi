@@ -1,11 +1,10 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import CustomCard from '../../commom-components/CustomCard'
-import ProjectInfo from '../../Constants/ProjectInfo'
 import CommonDrawer from '../../commom-components/CommonDrawer'
 import { motion } from 'framer-motion'
 
-const ProjectPage = ({ mode }) => {
+const ProjectPage = ({ mode, projects }) => {
     const [selectedCard, setSelectedCard] = useState(null);
     const [open, setOpen] = useState(false);
 
@@ -77,7 +76,7 @@ const cardVariants = {
                 sx={{ display: 'flex', justifyContent: 'center', mb:15 }}
                 useFlexGap
             >
-                {ProjectInfo.map((data) => (
+                {projects.map((data) => (
                     <motion.div
                         key={data.Title}
                         initial="offscreen"

@@ -1,7 +1,6 @@
 import { Avatar, Box, Button, CardActions, Chip, DialogContent, DialogTitle, Drawer, Grid, ModalClose, Typography } from '@mui/joy'
 import React from 'react'
 import PublicIcon from '@mui/icons-material/Public';
-import { Link } from 'react-router-dom';
 import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded'
 import VideoPlayer from './VideoPlayer';
 import PdfViewer from './PdfViewer';
@@ -120,19 +119,17 @@ const CommonDrawer = ({
                                 <Typography level="h3" sx={TypoStyle}>
                                     <PublicIcon fontSize="medium" /> Website
                                 </Typography>
-                                <Link to={Project_link}>
-                                    <span
-                                        style={{
-                                            color:
-                                                mode === 'on'
-                                                    ? 'blue'
-                                                    : 'inherit',
-                                        }}
-                                    >
-                                        {'https://redb.vercel.app/'}
-                                        <LaunchRoundedIcon fontSize="small" />
-                                    </span>
-                                </Link>
+                                <a
+                                    href={Project_link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        color: mode === 'on' ? 'blue' : 'inherit',
+                                    }}
+                                >
+                                    {Project_link}
+                                    <LaunchRoundedIcon fontSize="small" />
+                                </a>
                             </div>
                         ) : null}
                     </Box>
@@ -143,6 +140,8 @@ const CommonDrawer = ({
                             component="a"
                             variant="outlined"
                             sx={{ backgroundColor: 'skyblue' }}
+                            target="_blank"
+                            rel="noreferrer"
                             startDecorator={
                                 <LaunchRoundedIcon fontSize="small" />
                             }
@@ -155,6 +154,8 @@ const CommonDrawer = ({
                             component="a"
                             variant="soft"
                             sx={{ backgroundColor: 'skyblue' }}
+                            target="_blank"
+                            rel="noreferrer"
                             endDecorator={
                                 <LaunchRoundedIcon fontSize="small" />
                             }

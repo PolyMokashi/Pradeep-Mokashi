@@ -1,11 +1,10 @@
 import { Box, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 import ExperienceCard from '../../commom-components/ExperienceCard'
-import EducationInfo from '../../Constants/EducationInfo'
 import { Link } from '@mui/joy'
 import ExpMobileView from '../../commom-components/ExpMobileView'
 
-const Education = ({ mode }) => {
+const Education = ({ mode, education }) => {
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     return (
@@ -23,7 +22,7 @@ const Education = ({ mode }) => {
                 }}
             >
                 <Stack sx={{ width: { md: '70%' } }}>
-                    {EducationInfo.map((data, index) => (
+                    {education.map((data, index) => (
                         <Link key={index} href={data.CompanyLink} underline="none">
                             {isMobile ? (
                                 <Box sx={{ height: '100%', width: '100%', mb: 3 }}>

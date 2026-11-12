@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import {ReactTyped} from 'react-typed';
 
-const AutoType = ({ isXsScreen }) => {
+const AutoType = ({ isXsScreen, profile }) => {
     return (
         <>
             <Box
@@ -26,7 +26,7 @@ const AutoType = ({ isXsScreen }) => {
             >
 
                 <Typography variant={isXsScreen ? 'h5' : 'h3'}>
-                    Pradeep Mokashi
+                    {profile.name}
                 </Typography>
             </Box>
             <Box
@@ -39,13 +39,7 @@ const AutoType = ({ isXsScreen }) => {
                 <Typography variant={isXsScreen ? 'h6' : 'h4'}>
                     {' '}
                     <ReactTyped
-                        strings={[
-                            'an Engineer',
-                            'a Software Developer',
-                            'a Full Stack Developer',
-                            'an Explorer',
-                            'a Cyber Crime Intervention Officer',
-                        ]}
+                        strings={profile.roles}
                         typeSpeed={110}
                         loop
                         backSpeed={30}

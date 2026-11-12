@@ -3,7 +3,7 @@ import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
 import AchievementsCard from '../commom-components/AchievementsCard'
 import MobileViewCard from '../commom-components/MobileViewCard'
 
-const AchievementsPage = ({mode}) => {
+const AchievementsPage = ({ mode, certificates }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
@@ -14,9 +14,9 @@ const AchievementsPage = ({mode}) => {
               </Typography>
           </Box>
           {isMobile ? (
-              <MobileViewCard mode={mode} />
+              <MobileViewCard mode={mode} certificates={certificates} />
           ) : (
-              <AchievementsCard mode={mode} />
+              <AchievementsCard mode={mode} certificates={certificates} />
           )}
       </div>
   )

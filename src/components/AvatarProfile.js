@@ -1,11 +1,10 @@
 import { Avatar, Tooltip } from '@mui/material'
 import React from 'react'
-import PradeepAvatar from "../Assets/Images/Poly.jpg"
 
-const AvatarProfile = () => {
+const AvatarProfile = ({ profile }) => {
   return (
       <div>
-          <Tooltip title="Pradeep Mokashi" arrow>
+          <Tooltip title={profile.name} arrow>
               <Avatar
                   sx={{
                       width: { xs: 40, md: 72 },
@@ -16,8 +15,8 @@ const AvatarProfile = () => {
                   }}
               >
                   <img
-                      src={PradeepAvatar}
-                      alt="Pradeep Mokashi"
+                      src={profile.image}
+                      alt={profile.name}
                       style={{
                           width: '100%',
                           height: '100%',

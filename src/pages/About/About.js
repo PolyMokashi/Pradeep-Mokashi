@@ -7,11 +7,16 @@ import Typography from '@mui/joy/Typography'
 import Sheet from '@mui/joy/Sheet'
 import { AwesomeButtonSocial } from 'react-awesome-button'
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
-import poly from '../../Assets/Images/Poly.jpg'
 import { motion } from 'framer-motion'
 import Skills from '../../components/Skills'
 
-export function About({mode}) {
+export function About({
+    mode,
+    profile,
+    skills,
+    projectCount,
+    certificateCount,
+}) {
     const cardVariants = {
         offscreen: {
             x: -300,
@@ -100,9 +105,9 @@ export function About({mode}) {
                         }}
                     >
                         <img 
-                            src={poly} 
+                            src={profile.image}
                             loading="lazy" 
-                            alt=""
+                            alt={profile.name}
                             style={{
                                 width: '100%',
                                 height: '100%'
@@ -111,14 +116,14 @@ export function About({mode}) {
                     </AspectRatio>
                     <CardContent sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
                         <Typography fontSize="xl" fontWeight="lg">
-                            Pradeep Dilip Mokashi
+                            {profile.name}
                         </Typography>
                         <Typography
                             level="body-sm"
                             fontWeight="lg"
                             textColor="text.tertiary"
                         >
-                            AI-ML Developer | Full Stack Developer
+                            {profile.headline}
                         </Typography>
                         <Sheet
                             sx={{
@@ -135,19 +140,19 @@ export function About({mode}) {
                                 <Typography level="body-xs" fontWeight="lg">
                                     Projects
                                 </Typography>
-                                <Typography fontWeight="lg">12</Typography>
+                                <Typography fontWeight="lg">{projectCount}</Typography>
                             </div>
                             <div>
                                 <Typography level="body-xs" fontWeight="lg">
                                     Certificates
                                 </Typography>
-                                <Typography fontWeight="lg">8</Typography>
+                                <Typography fontWeight="lg">{certificateCount}</Typography>
                             </div>
                             <div>
                                 <Typography level="body-xs" fontWeight="lg">
                                     Experience
                                 </Typography>
-                                <Typography fontWeight="lg">1+ years</Typography>
+                                <Typography fontWeight="lg">{profile.experienceSummary}</Typography>
                             </div>
                         </Sheet>
                         <Box
@@ -158,39 +163,21 @@ export function About({mode}) {
                                 justifyContent: { xs: 'center', sm: 'flex-start' },
                             }}
                         >
-                            <AwesomeButtonSocial
-                                cssModule={AwesomeButtonStyles}
-                                type="linkedin"
-                                href="https://www.linkedin.com/in/pradeep-mokashi/"
-                            >
-                                Linkedin
-                            </AwesomeButtonSocial>
-                            <AwesomeButtonSocial
-                                cssModule={AwesomeButtonStyles}
-                                type="github"
-                                href="https://github.com/PolyMokashi"
-                            >
-                                GitHub
-                            </AwesomeButtonSocial>
-                            <AwesomeButtonSocial
-                                cssModule={AwesomeButtonStyles}
-                                type="instagram"
-                                href="https://www.instagram.com/poly_mokashi/"
-                            >
-                                Instagram
-                            </AwesomeButtonSocial>
-                            <AwesomeButtonSocial
-                                cssModule={AwesomeButtonStyles}
-                                type="twitter"
-                                href="https://x.com/Poly_Mokashi12"
-                            >
-                                Twitter
-                            </AwesomeButtonSocial>
+                            {profile.socialLinks.map((link) => (
+                                <AwesomeButtonSocial
+                                    key={link.type}
+                                    cssModule={AwesomeButtonStyles}
+                                    type={link.type}
+                                    href={link.url}
+                                >
+                                    {link.label}
+                                </AwesomeButtonSocial>
+                            ))}
                         </Box>
                     </CardContent>
                 </Card>
             </motion.div>
-            <Skills mode={mode} />
+            <Skills mode={mode} skills={skills} />
         </Box>
     )
 }

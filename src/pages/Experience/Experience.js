@@ -1,10 +1,9 @@
 import { Box, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 import ExperienceCard from '../../commom-components/ExperienceCard'
-import ExperienceInfo from '../../Constants/ExperienceInfo'
 import { Link } from '@mui/joy'
 import ExpMobileView from '../../commom-components/ExpMobileView'
-const Experience = ({mode}) => {
+const Experience = ({ mode, experience }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return (
@@ -22,7 +21,7 @@ const Experience = ({mode}) => {
                 }}
             >
                 <Stack sx={{ width: { md: '70%' } }}>
-                    {ExperienceInfo.map((data, index) => (
+                    {experience.map((data, index) => (
                         <Link
                             key={index}
                             href={data.CompanyLink}

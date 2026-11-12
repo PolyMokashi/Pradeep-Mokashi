@@ -1,0 +1,276 @@
+{
+  "profile": {
+    "name": "Pradeep Dilip Mokashi",
+    "headline": "AI-ML Developer | Full Stack Developer",
+    "image": "/media/Images/Poly.jpg",
+    "email": "pradeepmokashi12@gmail.com",
+    "resumeUrl": "https://drive.google.com/file/d/1NYQW6S-1hTBx2vogMarBC_4TfjhMpdye/view?usp=sharing",
+    "socialLinks": [
+      {
+        "label": "LinkedIn",
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/pradeep-mokashi/"
+      },
+      {
+        "label": "GitHub",
+        "type": "github",
+        "url": "https://github.com/PolyMokashi"
+      },
+      {
+        "label": "Instagram",
+        "type": "instagram",
+        "url": "https://www.instagram.com/poly_mokashi/"
+      },
+      {
+        "label": "Twitter",
+        "type": "twitter",
+        "url": "https://x.com/Poly_Mokashi12"
+      }
+    ],
+    "roles": [
+      "an Engineer",
+      "a Software Developer",
+      "a Full Stack Developer",
+      "an Explorer",
+      "a Cyber Crime Intervention Officer"
+    ],
+    "experienceSummary": "1+ years"
+  },
+  "projects": [
+    {
+      "AvatarIcon": "https://img.icons8.com/fluency/48/fine-print.png",
+      "Title": "AI in Finance",
+      "SubHeader": "Modeling Stock Price Movements Using Machine Learning and Sentiment Analysis",
+      "src": "/media/public/JETIR2507277.pdf",
+      "project_image": "/media/public/JETIR2507277_Certificate-images-0.jpg",
+      "Description": [
+        "Models: Implemented Random Forest, LSTM, and a Hybrid LSTM + Sentiment model.",
+        "Data Sources: Used historical stock data and real-time text from Google News, Reddit, and Twitter.",
+        "Sentiment Analysis: Employed VADER and BERT for sentiment scoring.",
+        "Performance: Hybrid LSTM + Sentiment model showed superior accuracy with lowest RMSE and MAE, demonstrating the value of sentiment integration."
+      ],
+      "TechIcon": [
+        { "component": "https://img.icons8.com/color/48/python--v1.png", "name": "Python" },
+        { "component": "https://img.icons8.com/fluency/48/tensorflow.png", "name": "TensorFlow" },
+        { "component": "https://img.icons8.com/material-rounded/24/keras.png", "name": "Keras" },
+        { "component": "https://pypi-camo.freetls.fastly.net/b86b2758380b6bc7cbdf4ff97fda9826a3b74aa2/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f7363696b69742d6c6561726e2f7363696b69742d6c6561726e2f6d61696e2f646f632f6c6f676f732f7363696b69742d6c6561726e2d6c6f676f2e706e67", "name": "Scikit-learn" },
+        { "component": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*-dNH8WI8Oy3etClaRvRCgw.png", "name": "NLTK" },
+        { "component": "https://img.icons8.com/pastel-glyph/64/brain-3--v1.png", "name": "BERT" },
+        { "component": "https://img.icons8.com/color/48/matplotlib.png", "name": "Matplotlib" },
+        { "component": "https://img.icons8.com/color/48/pandas.png", "name": "Pandas" },
+        { "component": "https://jupyter.org/assets/homepage/main-logo.svg", "name": "Jupyter" }
+      ],
+      "github_link": "https://www.jetir.org/view?paper=JETIR2507277"
+    },
+    {
+      "AvatarIcon": "/media/icons/Picture2.png",
+      "Title": "RedB",
+      "SubHeader": "Intelligent blood Management System for Hospitals and Blood Banks",
+      "src": "https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607704/RedB_drp0vl.m3u8",
+      "Description": "RedB is a new generation technology that connects hospital administration with blood banks. RedB is a platform that connects hospital administration with blood banks. This innovative platform is designed to streamline blood bank operations and improve patient safety by ensuring timely access to blood products when needed",
+      "TechIcon": [
+        { "component": "https://cdn.vuetifyjs.com/docs/images/brand-kit/v-logo-atom.svg", "name": "Vue.js" },
+        { "component": "https://img.icons8.com/color/48/javascript--v2.png", "name": "Javascript" },
+        { "component": "https://img.icons8.com/color/48/nodejs.png", "name": "Node.js" },
+        { "component": "https://img.icons8.com/color/48/mongodb.png", "name": "MongoDB" },
+        { "component": "https://img.icons8.com/color/48/express-js.png", "name": "Express.js" },
+        { "component": "https://cdn.vuetifyjs.com/docs/images/brand-kit/v-logo-atom.svg", "name": "Vuetify" }
+      ],
+      "Project_link": "https://redb.vercel.app/"
+    },
+    {
+      "AvatarIcon": "https://img.icons8.com/color/48/react-native.png",
+      "Title": "HR Management",
+      "SubHeader": "Associated with HDFC ERGO General Insurance Company Ltd.",
+      "src": "https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/HR_management_p0icab.m3u8",
+      "Description": "This web application is designed to streamline Human Resource (HR) processes for organizations. It utilizes the MERN stack for development and offers several functionalities for both admins and users.",
+      "TechIcon": [
+        { "component": "https://img.icons8.com/color/48/react-native.png", "name": "React.js" },
+        { "component": "https://img.icons8.com/color/48/javascript--v2.png", "name": "Javascript" },
+        { "component": "https://img.icons8.com/color/48/nodejs.png", "name": "Node.js" },
+        { "component": "https://img.icons8.com/color/48/mongodb.png", "name": "MongoDB" },
+        { "component": "https://img.icons8.com/color/48/express-js.png", "name": "Express.js" },
+        { "component": "https://img.icons8.com/color/32/material-ui.png", "name": "Material UI" }
+      ],
+      "github_link": "https://github.com/PolyMokashi"
+    },
+    {
+      "AvatarIcon": "https://img.icons8.com/color/48/vue-js.png",
+      "Title": "Part Number System",
+      "SubHeader": "Associated with Progneur Technologies Pvt. Ltd.",
+      "project_image": "https://iili.io/KscHyOu.md.png",
+      "Description": "A part number system is a method for uniquely identifying and organizing interchangeable parts within a supply chain or inventory management system. It helps track parts, streamline ordering, and ensure efficient assembly. Build a RESTful API with Node.js and Express.js to manage part numbers in a MongoDB database. Create a Vue.js frontend for viewing, adding, editing, and deleting part numbers with functionalities.",
+      "TechIcon": [
+        { "component": "https://cdn.vuetifyjs.com/docs/images/brand-kit/v-logo-atom.svg", "name": "Vue.js" },
+        { "component": "https://img.icons8.com/color/48/javascript--v2.png", "name": "Javascript" },
+        { "component": "https://img.icons8.com/color/48/nodejs.png", "name": "Node.js" },
+        { "component": "https://img.icons8.com/color/48/mongodb.png", "name": "MongoDB" },
+        { "component": "https://img.icons8.com/color/48/express-js.png", "name": "Express.js" },
+        { "component": "https://cdn.vuetifyjs.com/docs/images/brand-kit/v-logo-atom.svg", "name": "Vuetify" }
+      ],
+      "github_link": "https://github.com/PolyMokashi"
+    },
+    {
+      "AvatarIcon": "https://img.icons8.com/fluency/48/pacman.png",
+      "Title": "Pacman using C Programming",
+      "SubHeader": "A classic Pacman game implemented in C",
+      "src": "https://res.cloudinary.com/dmy7eqzxr/video/upload/v1761607750/Pacman_bs8oss.m3u8",
+      "Description": "The outcome of this Pacman project is a fully functional and interactive game that provides users with an engaging experience as they maneuver Pacman through a maze, collect pellets, and strategize to avoid ghosts while aiming to achieve a high score. The project showcases effective game development skills in C.",
+      "TechIcon": [
+        { "component": "https://img.icons8.com/color/48/c-programming.png", "name": "C" }
+      ],
+      "github_link": "https://github.com/PolyMokashi/Pacman_using_C"
+    },
+    {
+      "AvatarIcon": "https://img.icons8.com/color/48/python--v1.png",
+      "Title": "Face Democracy- Next Generation Voting",
+      "SubHeader": "Online Voting System Using Facial Recognition",
+      "project_image": "https://iili.io/KscHsV4.md.jpg",
+      "Description": "In the digital era, electronic voting machines (EVMs) have emerged to address traditional voting challenges, offering faster tabulation and reduced human error. However, concerns about their security and accuracy persist, especially highlighted during the COVID-19 pandemic, which underscored the need for contactless voting methods. Integrating face-detection technology, a field of artificial intelligence and computer vision, into EVMs presents a promising solution. This technology, proven effective in various sectors for precise identification, can enhance security by verifying voter identities and preventing fraud such as impersonation and multiple voting. This integration aims to revolutionize the electoral process, making it more secure, efficient, and trustworthy.",
+      "TechIcon": [
+        { "component": "https://img.icons8.com/color/48/python--v1.png", "name": "Python" },
+        { "component": "https://img.icons8.com/pastel-glyph/64/brain-3--v1.png", "name": "Machine Learning" },
+        { "component": "https://www.djangoproject.com/m/img/logos/django-logo-positive.png", "name": "Django" },
+        { "component": "https://img.icons8.com/fluency/48/html-5.png", "name": "HTML5" },
+        { "component": "https://img.icons8.com/fluency/48/css3.png", "name": "CSS3" }
+      ],
+      "github_link": "https://github.com/PolyMokashi"
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "ava_icon": "https://cdn.theforage.com/vinternships/companyassets/SKZxezskWgmFjRvj9/BqF6gmrmLunCkdqKM/1710332417845/01-bcgx-logo-color-positive-RGB-small.png",
+      "link": "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/BCG%20/gabev3vXhuACr48eb_BCG_SKZpDgrDYkMhs5NtJ_1725110112812_completion_certificate.pdf",
+      "title": "GenAI Job Simulation",
+      "subheader": "BCGX",
+      "img": "https://iili.io/KsciWmB.md.jpg"
+    },
+    {
+      "id": 3,
+      "ava_icon": "/media/icons/aws-logo.svg",
+      "link": "https://www.credly.com/go/veuWgVBf",
+      "title": "AWS Academy Cloud Foundations",
+      "subheader": "AWS Training and Certification",
+      "img": "https://iili.io/KscHLil.md.jpg"
+    },
+    {
+      "id": 4,
+      "ava_icon": "/media/icons/aws-logo.svg",
+      "link": "https://www.credly.com/badges/fb21fe16-a1a5-4fdd-a22f-ffb300a773df/public_url",
+      "title": "AWS Academy Machine Learning",
+      "subheader": "AWS Training and Certification",
+      "img": "https://iili.io/KscHZf2.md.jpg"
+    },
+    {
+      "id": 5,
+      "ava_icon": "/media/icons/Udemy.svg",
+      "link": "https://ude.my/UC-485e29eb-edfe-4ff0-96a1-7392b3a72c27",
+      "title": "Image Processing and Computer Vision with Python & OpenCV",
+      "subheader": "Udemy",
+      "img": "https://iili.io/KscHtlS.md.jpg"
+    },
+    {
+      "id": 6,
+      "ava_icon": "/media/icons/Udemy.svg",
+      "link": "https://ude.my/UC-2fd7c466-3b66-440a-a8dc-75dad97bec55",
+      "title": "Complete JAVASCRIPT with HTML5,CSS3 from zero to Expert",
+      "subheader": "Udemy",
+      "img": "https://iili.io/KscHpRe.md.jpg"
+    },
+    {
+      "id": 7,
+      "ava_icon": "/media/icons/IOlogo.png",
+      "link": "https://www.linkedin.com/in/pradeep-mokashi/details/certifications/",
+      "title": "Certified Cyber Crime Intervention Officer",
+      "subheader": "National Security Database",
+      "img": "https://iili.io/KscHmJ9.md.jpg"
+    },
+    {
+      "id": 8,
+      "ava_icon": "https://img.icons8.com/fluency/48/hugging-face_app.png",
+      "link": "https://huggingface.co/spaces/agents-course/unit_1_quiz/discussions/237#67eb88d75efb3c1d5e1727be",
+      "title": "Fundamentals of AI Agents",
+      "subheader": "Hugging Face",
+      "img": "https://iili.io/KsciVeV.md.jpg"
+    }
+  ],
+  "education": [
+    {
+      "Months": "2025- present",
+      "CompanyName": "Brandenburgische Technische Universität Cottbus-Senftenberg",
+      "Role": "Master of Science in AI",
+      "CompanyLogo": "https://www.b-tu.de/typo3conf/ext/btu_template/Resources/Public/Images/logo/BTULogo_notext_grau.png",
+      "Description": "I am pursuing a Master’s in Artificial Intelligence at BTU, focusing on machine learning, robotics, and real-time AI systems. My coursework and projects emphasize practical problem-solving, interdisciplinary research, and innovation in intelligent technologies.",
+      "TechIcon": [],
+      "CompanyLink": "https://www.b-tu.de/",
+      "Place": "Cottbus, Germany"
+    },
+    {
+      "Months": "2021-2024",
+      "CompanyName": "Shivaji University, Kolhapur",
+      "Role": "Bachelor of Technology in CSE(AI-ML)",
+      "CompanyLogo": "https://www.pngkey.com/png/detail/269-2691243_shivaji-university-kolhapur-logo.png",
+      "Description": "Completed my bachelor’s with strong foundations in AI, data science, and software development. I worked on multiple real-world projects involving deep learning, NLP, and computer vision, and secured 2nd place in a coding competition organized by the college coding club.",
+      "TechIcon": [],
+      "CompanyLink": "https://shivajiuniversity.org/",
+      "Place": "Kolhapur, India"
+    }
+  ],
+  "experience": [
+    {
+      "Months": "Jan 2024 - Present",
+      "CompanyName": "HDFC ERGO General Insurance Company Ltd.",
+      "Role": "Web Developer Intern",
+      "CompanyLogo": "/media/icons/hdfcergo_logo.svg",
+      "Description": "Build HR recruitment Platform. Collaborated with Digital Banca Team for frontend. Implemented Google Tag Manager to streamline data collection and enhance tracking capabilities in Google. Researched AI tools for social media management, marketing, audio content creation, and chatbots.",
+      "TechIcon": [
+        { "component": "https://img.icons8.com/color/48/react-native.png", "name": "React.js" },
+        { "component": "https://img.icons8.com/color/48/nodejs.png", "name": "Node.js" },
+        { "component": "https://img.icons8.com/color/48/mongodb.png", "name": "MongoDB" },
+        { "component": "https://img.icons8.com/color/48/express-js.png", "name": "Express.js" },
+        { "component": "https://img.icons8.com/color/32/material-ui.png", "name": "Material UI" },
+        { "component": "https://img.icons8.com/color/48/google-analytics.png", "name": "Google Analytics" },
+        { "component": "https://img.icons8.com/color/48/google-tag-manager.png", "name": "Google Tag Manager" }
+      ],
+      "CompanyLink": "https://www.hdfcergo.com/",
+      "Place": "Bhandup, Mumbai, MH"
+    },
+    {
+      "Months": "Nov 2022 - May 2023",
+      "CompanyName": "Progneur Technologies Pvt. Ltd.",
+      "Role": "Software Development Engineer Intern",
+      "CompanyLogo": "/media/icons/Prog_logo.jpg",
+      "Description": "Build Part Number System. Collaborated for LMS project. Collaborated for Memory Card Game.",
+      "TechIcon": [
+        { "component": "https://img.icons8.com/color/48/vue-js.png", "name": "Vue.js" },
+        { "component": "https://img.icons8.com/color/48/nodejs.png", "name": "Node.js" },
+        { "component": "https://img.icons8.com/color/48/mongodb.png", "name": "MongoDB" },
+        { "component": "https://img.icons8.com/color/48/express-js.png", "name": "Express.js" },
+        { "component": "https://cdn.vuetifyjs.com/docs/images/brand-kit/v-logo-atom.svg", "name": "Vuetify" }
+      ],
+      "CompanyLink": "https://www.progneur.com/",
+      "Place": "Work From Home"
+    }
+  ],
+  "skills": [
+    { "name": "Python", "icon": "https://img.icons8.com/color/48/python--v1.png" },
+    { "name": "ML", "icon": "https://img.icons8.com/pastel-glyph/64/brain-3--v1.png" },
+    { "name": "OpenCV", "icon": "https://img.icons8.com/color/48/opencv.png" },
+    { "name": "PyTorch", "icon": "https://img.icons8.com/fluency/48/pytorch.png" },
+    { "name": "TensorFlow", "icon": "https://img.icons8.com/color/48/tensorflow.png" },
+    { "name": "JavaScript", "icon": "https://img.icons8.com/color/48/javascript--v2.png" },
+    { "name": "React", "icon": "https://img.icons8.com/color/48/react-native.png" },
+    { "name": "Vue.js", "icon": "https://img.icons8.com/color/48/vue-js.png" },
+    { "name": "Node.js", "icon": "https://img.icons8.com/color/48/nodejs.png" },
+    { "name": "C", "icon": "https://img.icons8.com/color/48/c-programming.png" },
+    { "name": "C++", "icon": "https://img.icons8.com/color/48/c-plus-plus-logo.png" },
+    { "name": "MongoDB", "icon": "https://img.icons8.com/color/48/mongodb.png" },
+    { "name": "Express.js", "icon": "https://img.icons8.com/color/48/express-js.png" },
+    { "name": "Google Analytics", "icon": "https://img.icons8.com/color/48/google-analytics.png" },
+    { "name": "GTM", "icon": "https://img.icons8.com/color/48/google-tag-manager.png" },
+    { "name": "R", "icon": "https://img.icons8.com/bubbles/50/r--v2.png" },
+    { "name": "SQL", "icon": "https://img.icons8.com/color/48/my-sql.png" },
+    { "name": "PostgreSQL", "icon": "https://img.icons8.com/color/48/postgreesql.png" }
+  ]
+}

@@ -1,10 +1,9 @@
 // Skills.js
 import React from 'react'
 import { Grid, Box, Typography, Avatar } from '@mui/material'
-import skills from '../Constants/SkillsInfo'
 import { motion } from 'framer-motion'
 
-const Skills = ({mode}) => {
+const Skills = ({ mode, skills }) => {
     return (
         <Box sx={{ padding: 4 }}>
             <Typography variant="h5" gutterBottom>

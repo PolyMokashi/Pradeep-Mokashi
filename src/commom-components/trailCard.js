@@ -3,9 +3,8 @@ import { Card, Box, CardMedia, CardHeader, Avatar, IconButton, CardActions, Grid
 import LinkIcon from '@mui/icons-material/Link'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
-import cardsData from '../Constants/CerticatesInfo'
 
-function App() {
+function App({ certificates }) {
     const [openCardId, setOpenCardId] = useState(null)
     const [clickedOutside, setClickedOutside] = useState(false)
 
@@ -46,7 +45,7 @@ function App() {
                         alignItems: 'center',
                     }}
                 >
-                    {cardsData.map((card) => (
+                    {certificates.map((card) => (
                         <Card
                             key={card.id}
                             onClick={() => handleCardClick(card.id)}

@@ -10,7 +10,7 @@ import animationData from '../../Assets/Animations/Animation - 1715361331426.jso
 import animationData1 from '../../Assets/Animations/Darkmode_profile.json'
 import { motion } from 'framer-motion'
 
-const Home = ({ mode }) => {
+const Home = ({ mode, profile }) => {
     const [, setClicked] = useState(false)
     const [clicked1, setClicked1] = useState(false)
     const theme = useTheme()
@@ -27,7 +27,7 @@ const Home = ({ mode }) => {
     }
     function handleMail() {
         setTimeout(() => {
-            const recipient = 'pradeepmokashi12@gmail.com'
+            const recipient = profile.email
             const subject = 'Subject Here'
             const body = 'Body of the email goes here'
             const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
@@ -40,9 +40,7 @@ const Home = ({ mode }) => {
 
     function handleCV() {
         setTimeout(() => {
-            const pdfUrl =
-                'https://drive.google.com/file/d/1NYQW6S-1hTBx2vogMarBC_4TfjhMpdye/view?usp=sharing'
-            window.open(pdfUrl, '_blank')
+            window.open(profile.resumeUrl, '_blank')
         }, 500)
         setClicked(true)
     }
@@ -87,7 +85,7 @@ const Home = ({ mode }) => {
                         animate="visible"
                         variants={variants}
                     >
-                        <AutoType isXsScreen={isXsScreen} />
+                        <AutoType isXsScreen={isXsScreen} profile={profile} />
                     </motion.div>
                     <motion.div
                         initial="hidden"

@@ -12,9 +12,8 @@ import {
 import LinkIcon from '@mui/icons-material/Link'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
-import cardsData from '../Constants/CerticatesInfo'
 import { motion } from 'framer-motion';
-function AchievementsCard({mode}) {
+function AchievementsCard({ mode, certificates }) {
     const [openCardId, setOpenCardId] = useState(null)
 
     const cardVariants = {
@@ -102,7 +101,7 @@ function AchievementsCard({mode}) {
                         ml: -70,
                     }}
                 >
-                    {cardsData.map((card, index) => (
+                    {certificates.map((card, index) => (
                         <motion.div
                             key={card.id}
                             initial={getVariant(card.id)}

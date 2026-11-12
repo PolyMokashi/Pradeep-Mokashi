@@ -12,10 +12,9 @@ import {
 import LinkIcon from '@mui/icons-material/Link'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
-import cardsData from '../Constants/CerticatesInfo'
 import { motion } from 'framer-motion'
 
-function MoblieViewCard({ mode }) {
+function MoblieViewCard({ mode, certificates }) {
     const cardVariants = {
         offscreen: {
             y: 300,
@@ -40,7 +39,7 @@ function MoblieViewCard({ mode }) {
                     ml:{xs:-2}
                 }}
             >
-                {cardsData.map((card) => (
+                {certificates.map((card) => (
                     <motion.div
                         key={card.id}
                         initial="offscreen"
