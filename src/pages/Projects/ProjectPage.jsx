@@ -71,7 +71,7 @@ const cardVariants = {
             </Box>
             <Stack
                 direction="row"
-                spacing={6}
+                spacing={{ xs: 2, sm: 3, md: 6 }}
                 flexWrap="wrap"
                 sx={{ display: 'flex', justifyContent: 'center', mb:15 }}
                 useFlexGap

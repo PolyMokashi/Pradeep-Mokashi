@@ -18,10 +18,6 @@ export function About({
     certificateCount,
 }) {
     const cardVariants = {
-        offscreen: {
-            x: -300,
-            opacity: 0,
-        },
         onscreen: {
             x: 0,
             opacity: 1,
@@ -35,17 +31,17 @@ export function About({
     return (
         <Box
             sx={{
-                width: { xs: '100%', md: '60%' },
+                width: { xs: '100%', md: '80%' },
+                maxWidth: 960,
                 position: 'relative',
-                marginLeft: { xs: 'auto', md: '200px' },
-                marginRight: 'auto',
+                mx: 'auto',
                 px: { xs: 2, sm: 0 },
                 overflow: 'hidden',
                 my: 4,
             }}
         >
             <motion.div
-                initial="offscreen"
+                initial={false}
                 animate="onscreen"
                 variants={cardVariants}
             >

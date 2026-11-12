@@ -109,8 +109,10 @@ const Home = ({ mode, profile }) => {
                     <Box
                         sx={{
                             display: 'flex',
+                            flexWrap: { xs: 'wrap', sm: 'nowrap' },
                             justifyContent: 'center',
                             alignItems: 'center',
+                            gap: { xs: 1, sm: 0 },
                             mt: 4,
                         }}
                     >
@@ -140,7 +142,7 @@ const Home = ({ mode, profile }) => {
                         </Box>
                         <Box
                             sx={{
-                                ml: 2,
+                                ml: { xs: 0, sm: 2 },
                             }}
                         >
                             <CustomButton
