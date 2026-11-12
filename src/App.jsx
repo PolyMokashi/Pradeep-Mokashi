@@ -17,7 +17,7 @@ import AchievementsPage from './pages/AchievementsPage'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-    gtmId: process.env.REACT_APP_GTM_ID,
+    gtmId: import.meta.env.VITE_GTM_ID,
 }
 TagManager.initialize(tagManagerArgs)
 
@@ -132,7 +132,7 @@ function App() {
             {isNavbarVisible && <Navbar mode={mode} />}
             <AvatarProfile profile={portfolio.profile} />
             <Routes>
-                <Route exact path="/" element={<Home mode={mode} profile={portfolio.profile} />} />
+                <Route path="/" element={<Home mode={mode} profile={portfolio.profile} />} />
                 <Route
                     exact
                     path="/about"
@@ -166,7 +166,7 @@ function App() {
                     path="/achievements"
                     element={<AchievementsPage mode={mode} certificates={portfolio.certificates} />}
                 />
-                <Route exact path="*" element={<Error mode={mode} />} />
+                <Route path="*" element={<Error mode={mode} />} />
             </Routes>
             {isFooterVisible && (
                 <Footer

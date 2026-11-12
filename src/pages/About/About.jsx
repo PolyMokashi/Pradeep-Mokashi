@@ -6,7 +6,7 @@ import CardContent from '@mui/joy/CardContent'
 import Typography from '@mui/joy/Typography'
 import Sheet from '@mui/joy/Sheet'
 import { AwesomeButtonSocial } from 'react-awesome-button'
-import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
+import 'react-awesome-button/dist/styles.css'
 import { motion } from 'framer-motion'
 import Skills from '../../components/Skills'
 
@@ -166,7 +166,6 @@ export function About({
                             {profile.socialLinks.map((link) => (
                                 <AwesomeButtonSocial
                                     key={link.type}
-                                    cssModule={AwesomeButtonStyles}
                                     type={link.type}
                                     href={link.url}
                                 >
