@@ -1,25 +1,18 @@
 import React from 'react'
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import AchievementsCard from '../commom-components/AchievementsCard'
-import MobileViewCard from '../commom-components/MobileViewCard'
 
 const AchievementsPage = ({ mode, certificates }) => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  return (
-      <div>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Typography variant="h5" color={'blueviolet'}>
-                  Certificates
-              </Typography>
-          </Box>
-          {isMobile ? (
-              <MobileViewCard mode={mode} certificates={certificates} />
-          ) : (
-              <AchievementsCard mode={mode} certificates={certificates} />
-          )}
-      </div>
-  )
+    return (
+        <Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                <Typography variant="h5" color="blueviolet">
+                    Certificates
+                </Typography>
+            </Box>
+            <AchievementsCard mode={mode} certificates={certificates} />
+        </Box>
+    )
 }
 
 export default AchievementsPage

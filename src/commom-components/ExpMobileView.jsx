@@ -3,7 +3,7 @@ import { Box, Typography, Chip, Link, Card } from '@mui/joy'
 import { motion } from 'framer-motion'
 import { Avatar } from '@mui/material'
 
-const MotionCard = motion(Card)
+const MotionCard = motion.create(Card)
 
 const ExpMobileView = ({
     Role,

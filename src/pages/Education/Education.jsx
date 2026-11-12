@@ -22,11 +22,27 @@ const Education = ({ mode, education }) => {
                 }}
             >
                 <Stack sx={{ width: { md: '70%' } }}>
-                    {education.map((data, index) => (
-                        <Link key={index} href={data.CompanyLink} underline="none">
-                            {isMobile ? (
-                                <Box sx={{ height: '100%', width: '100%', mb: 3 }}>
-                                    <ExpMobileView
+                    {education.map((data, index) =>
+                        isMobile ? (
+                            <ExpMobileView
+                                key={index}
+                                Role={data.Role}
+                                CompanyName={data.CompanyName}
+                                CompanyLogo={data.CompanyLogo}
+                                Months={data.Months}
+                                Place={data.Place}
+                                CompanyLink={data.CompanyLink}
+                                Description={data.Description}
+                                TechIcon={data.TechIcon}
+                                mode={mode}
+                            />
+                        ) : (
+                            <Link
+                                key={index}
+                                href={data.CompanyLink}
+                                underline="none"
+                            >
+                                <ExperienceCard
                                         key={index}
                                         Role={data.Role}
                                         CompanyName={data.CompanyName}
@@ -38,23 +54,9 @@ const Education = ({ mode, education }) => {
                                         TechIcon={data.TechIcon}
                                         mode={mode}
                                     />
-                                </Box>
-                            ) : (
-                                <ExperienceCard
-                                    key={index}
-                                    Role={data.Role}
-                                    CompanyName={data.CompanyName}
-                                    CompanyLogo={data.CompanyLogo}
-                                    Months={data.Months}
-                                    Place={data.Place}
-                                    CompanyLink={data.CompanyLink}
-                                    Description={data.Description}
-                                    TechIcon={data.TechIcon}
-                                    mode={mode}
-                                />
-                            )}
-                        </Link>
-                    ))}
+                            </Link>
+                        )
+                    )}
                 </Stack>
             </Grid>
         </div>

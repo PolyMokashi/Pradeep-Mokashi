@@ -1,20 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { lazy, Suspense, useState, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/NavBar/Navbar'
-import Home from './pages/Home/Home'
 import './App.css'
 import ModeSwitch from './components/BackGround/ModeSwitch'
-import { About } from './pages/About/About'
-import { Error } from './pages/Error/Error404'
-import Loader from './components/Loader/Loader'
 import './Loader.css'
 import AvatarProfile from './components/AvatarProfile'
-import ProjectPage from './pages/Projects/ProjectPage'
-import Experience from './pages/Experience/Experience'
-import Education from './pages/Education/Education'
 import Footer from './components/Footer'
-import AchievementsPage from './pages/AchievementsPage'
 import TagManager from 'react-gtm-module'
+
+const Home = lazy(() => import('./pages/Home/Home'))
+const About = lazy(() =>
+    import('./pages/About/About').then((module) => ({ default: module.About }))
+)
+const Error = lazy(() =>
+    import('./pages/Error/Error404').then((module) => ({
+        default: module.Error,
+    }))
+)
+const Loader = lazy(() => import('./components/Loader/Loader'))
+const ProjectPage = lazy(() => import('./pages/Projects/ProjectPage'))
+const Experience = lazy(() => import('./pages/Experience/Experience'))
+const Education = lazy(() => import('./pages/Education/Education'))
+const AchievementsPage = lazy(() => import('./pages/AchievementsPage'))
 
 const tagManagerArgs = {
     gtmId: import.meta.env.VITE_GTM_ID,
@@ -106,7 +113,17 @@ function App() {
                 ) : (
                     <div className="overlay">
                         <div className="centered">
-                            <Loader />
+                            <Suspense
+                                fallback={
+                                    <div
+                                        className="loader-spinner"
+                                        role="status"
+                                        aria-label="Loading"
+                                    />
+                                }
+                            >
+                                <Loader />
+                            </Suspense>
                         </div>
                     </div>
                 )}
@@ -119,7 +136,17 @@ function App() {
             {isLoading && (
                 <div className="overlay">
                     <div className="centered">
-                        <Loader />
+                        <Suspense
+                            fallback={
+                                <div
+                                    className="loader-spinner"
+                                    role="status"
+                                    aria-label="Loading"
+                                />
+                            }
+                        >
+                            <Loader />
+                        </Suspense>
                     </div>
                 </div>
             )}
@@ -131,6 +158,13 @@ function App() {
             </div>
             {isNavbarVisible && <Navbar mode={mode} />}
             <AvatarProfile profile={portfolio.profile} />
+            <Suspense
+                fallback={
+                    <div className="route-loading" role="status">
+                        Loading page...
+                    </div>
+                }
+            >
             <Routes>
                 <Route path="/" element={<Home mode={mode} profile={portfolio.profile} />} />
                 <Route
@@ -168,6 +202,7 @@ function App() {
                 />
                 <Route path="*" element={<Error mode={mode} />} />
             </Routes>
+            </Suspense>
             {isFooterVisible && (
                 <Footer
                     mode={mode}

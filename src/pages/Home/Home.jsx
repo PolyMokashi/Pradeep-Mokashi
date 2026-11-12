@@ -5,100 +5,73 @@ import CustomButton from '../../commom-components/CustomButton'
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email'
 import './Home.css'
-import Lottie from 'react-lottie'
+import LottieAnimation from '../../components/LottieAnimation'
 import { motion } from 'framer-motion'
 import useRemoteAnimation from '../../hooks/useRemoteAnimation'
 
 const Home = ({ mode, profile }) => {
-    const [, setClicked] = useState(false)
     const [clicked1, setClicked1] = useState(false)
     const theme = useTheme()
     const isXsScreen = useMediaQuery(theme.breakpoints.down('sm'))
+    const prefersReducedMotion = useMediaQuery(
+        '(prefers-reduced-motion: reduce)'
+    )
     const animationUrl =
         mode === 'on'
             ? '/media/Animations/Animation - 1715361331426.json'
             : '/media/Animations/Darkmode_profile.json'
     const { animationData, error: animationError } =
         useRemoteAnimation(animationUrl)
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-    }
     function handleMail() {
-        setTimeout(() => {
-            const recipient = profile.email
-            const subject = 'Subject Here'
-            const body = 'Body of the email goes here'
-            const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
-                subject
-            )}&body=${encodeURIComponent(body)}`
-            window.location.href = mailtoLink
-        }, 500)
+        const subject = "Let's connect"
+        window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}`
         setClicked1(true)
     }
 
     function handleCV() {
-        setTimeout(() => {
-            window.open(profile.resumeUrl, '_blank')
-        }, 500)
-        setClicked(true)
+        window.open(profile.resumeUrl, '_blank', 'noopener,noreferrer')
     }
 
     const variants = {
         hidden: { opacity: 0, y: -20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
-    };
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: prefersReducedMotion ? 0 : 0.6 },
+        },
+    }
 
     return (
-        <div>
+        <Box sx={{ maxWidth: 1040, mx: 'auto', py: { xs: 3, md: 5 } }}>
             <Grid container alignItems="center" justifyContent="center">
                 <Grid item xs={12}>
-                    <Box sx={{ ml: { xs: 0, sm: 5, md: 10, lg: 20 }, my: 2 }}>
-                        <Typography
-                            variant="body2"
-                            sx={{
-                                color: 'rgb(255, 0, 0)',
-                                fontFamily:
-                                    '"Fira Code", "Courier New", monospace',
-                                fontSize: '0.7rem',
-                                ml: 2,
-                            }}
-                        >
-                            {'<html>'}
-                        </Typography>
-                        <Typography
-                            variant="body2"
-                            sx={{
-                                color: 'rgb(255, 166, 0)',
-                                fontFamily:
-                                    '"Fira Code", "Courier New", monospace',
-                                fontSize: '0.7rem',
-                                ml: 2,
-                            }}
-                        >
-                            {'<body>'}
-                        </Typography>
-                    </Box>
                     <motion.div
-                        initial="hidden"
+                        initial={prefersReducedMotion ? false : 'hidden'}
                         animate="visible"
                         variants={variants}
                     >
-                        <AutoType isXsScreen={isXsScreen} profile={profile} />
+                        <AutoType profile={profile} />
                     </motion.div>
                     <motion.div
-                        initial="hidden"
+                        initial={prefersReducedMotion ? false : 'hidden'}
                         animate="visible"
                         variants={variants}
                     >
                         <Box
                             sx={{
-                                height: '30dvh',
+                                width: '100%',
+                                maxWidth: 440,
+                                height: { xs: 190, sm: 240, md: 280 },
+                                mx: 'auto',
+                                mt: { xs: 2, sm: 3 },
                             }}
                         >
                             {animationData ? (
-                                <Lottie options={defaultOptions} />
+                                <LottieAnimation
+                                    animationData={animationData}
+                                    loop={!prefersReducedMotion}
+                                    isStopped={prefersReducedMotion}
+                                />
                             ) : animationError ? (
                                 <Typography role="alert">
                                     Animation could not be loaded: {animationError}
@@ -146,12 +119,12 @@ const Home = ({ mode, profile }) => {
                             }}
                         >
                             <CustomButton
-                                variant={'outlined'}
+                                variant="contained"
                                 sx={{
-                                    color: 'blueviolet',
-                                    borderColor: 'blueviolet',
+                                    color: '#fff',
+                                    backgroundColor: 'blueviolet',
                                     '&:hover': {
-                                        borderColor: 'darkviolet',
+                                        backgroundColor: 'darkviolet',
                                     },
                                 }}
                                 size={isXsScreen ? 'small' : 'large'}
@@ -163,44 +136,9 @@ const Home = ({ mode, profile }) => {
                             </CustomButton>
                         </Box>
                     </Box>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'right',
-                            justifyContent: 'right',
-                            mr: { xs: 0, sm: 5, md: 10, lg: 20 },
-                            mt: 2,
-                        }}
-                    >
-                        <Box>
-                            <Typography
-                                variant="body2"
-                                sx={{
-                                    color: 'rgb(255, 166, 0)',
-                                    fontFamily:
-                                        '"Fira Code", "Courier New", monospace',
-                                    fontSize: '0.7rem',
-                                    mr: 2,
-                                }}
-                            >
-                                {'</body>'}
-                            </Typography>
-                            <Typography
-                                variant="body2"
-                                sx={{
-                                    color: 'rgb(255, 0, 0)',
-                                    fontFamily:
-                                        '"Fira Code", "Courier New", monospace',
-                                    fontSize: '0.7rem',
-                                }}
-                            >
-                                {'</html>'}
-                            </Typography>
-                        </Box>
-                    </Box>
                 </Grid>
             </Grid>
-        </div>
+        </Box>
     )
 }
 

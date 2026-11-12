@@ -74,7 +74,13 @@ const CommonDrawer = ({
                             <Typography sx={TypoStyle} level="h3">
                                 About
                             </Typography>
-                            <Typography level="body-md" sx={TypoStyle}>
+                            <Typography
+                                component={
+                                    Array.isArray(Description) ? 'div' : 'p'
+                                }
+                                level="body-md"
+                                sx={TypoStyle}
+                            >
                                 {Array.isArray(Description) ? (
                                     <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
                                         {Description.map((item, idx) => (

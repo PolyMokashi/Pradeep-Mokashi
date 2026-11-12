@@ -21,34 +21,26 @@ const Experience = ({ mode, experience }) => {
                 }}
             >
                 <Stack sx={{ width: { md: '70%' } }}>
-                    {experience.map((data, index) => (
-                        <Link
-                            key={index}
-                            href={data.CompanyLink}
-                            underline="none"
-                        >
-                            {isMobile ? (
-                                <Box
-                                    sx={{
-                                        height: '100%',
-                                        width: '100%',
-                                        mb: 3,
-                                    }}
-                                >
-                                    <ExpMobileView
-                                        key={index}
-                                        Role={data.Role}
-                                        CompanyName={data.CompanyName}
-                                        CompanyLogo={data.CompanyLogo}
-                                        Months={data.Months}
-                                        Place={data.Place}
-                                        CompanyLink={data.CompanyLink}
-                                        Description={data.Description}
-                                        TechIcon={data.TechIcon}
-                                        mode={mode}
-                                    />
-                                </Box>
-                            ) : (
+                    {experience.map((data, index) =>
+                        isMobile ? (
+                            <ExpMobileView
+                                key={index}
+                                Role={data.Role}
+                                CompanyName={data.CompanyName}
+                                CompanyLogo={data.CompanyLogo}
+                                Months={data.Months}
+                                Place={data.Place}
+                                CompanyLink={data.CompanyLink}
+                                Description={data.Description}
+                                TechIcon={data.TechIcon}
+                                mode={mode}
+                            />
+                        ) : (
+                            <Link
+                                key={index}
+                                href={data.CompanyLink}
+                                underline="none"
+                            >
                                 <ExperienceCard
                                     key={index}
                                     Role={data.Role}
@@ -61,9 +53,9 @@ const Experience = ({ mode, experience }) => {
                                     TechIcon={data.TechIcon}
                                     mode={mode}
                                 />
-                            )}
-                        </Link>
-                    ))}
+                            </Link>
+                        )
+                    )}
                 </Stack>
             </Grid>
         </div>

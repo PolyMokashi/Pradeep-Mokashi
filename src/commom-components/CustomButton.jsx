@@ -12,12 +12,12 @@ const CustomButton = ({
 }) => {
     return (
         <Button
-            variant={variant === undefined ? 'contained' : variant}
-            size={size === undefined ? 'medium' : size}
-            startIcon={startIcon === undefined ? false : startIcon}
+            variant={variant ?? 'contained'}
+            size={size ?? 'medium'}
+            startIcon={startIcon}
             sx={sx}
-            onClick={onClick === undefined ? false : onClick}
-            className={className === undefined ? false : className}
+            onClick={onClick}
+            className={className}
         >
             {children}
         </Button>

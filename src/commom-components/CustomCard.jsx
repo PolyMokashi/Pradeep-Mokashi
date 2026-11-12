@@ -4,6 +4,8 @@ import {
     Avatar,
     CardContent,
     CardActions,
+    Box,
+    Typography,
 } from '@mui/material'
 import React, { useState } from 'react'
 import "./CustomCard.css"
@@ -18,23 +20,17 @@ const CustomCard = ({
     project_image,
     mode,
 }) => {
-    const [imageLoaded, setImageLoaded] = useState(false)
+    const [imageFailed, setImageFailed] = useState(false)
+    const isVideo = src && !String(src).toLowerCase().includes('.pdf')
+    const hasImage = project_image && !imageFailed
 
     return (
-        <>
-            <Card
+        <Card
                 className="mycard"
                 sx={{
-                    width: { xs: '100%', md: 550 },
-                    ml: { xs: 1, md: '' },
-                    opacity: { md: 0.8 },
-                    transition: 'all 0.4s ease',
-                    '&:hover': {
-                        opacity: 1,
-                    },
+                    width: '100%',
                     position: 'relative',
                     height: '100%',
-                    cursor: 'pointer',
                     background:
                         mode === 'off'
                             ? 'linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%)'
@@ -60,44 +56,88 @@ const CustomCard = ({
                     }
                     title={Title}
                     subheader={SubHeader}
+                    sx={{ alignItems: 'flex-start', minHeight: 100 }}
                     titleTypographyProps={{
                         sx: {
                             color: mode === 'off' ? 'white' : 'inherit',
                             fontWeight: 'bold',
                             fontFamily: 'Verdana',
+                            display: '-webkit-box',
+                            WebkitBoxOrient: 'vertical',
+                            WebkitLineClamp: 2,
+                            overflow: 'hidden',
                         },
                     }}
                     subheaderTypographyProps={{
-                        sx: { color: mode === 'off' ? '#b0b0b0' : 'inherit' },
+                        sx: {
+                            color: mode === 'off' ? '#b0b0b0' : 'inherit',
+                            display: '-webkit-box',
+                            WebkitBoxOrient: 'vertical',
+                            WebkitLineClamp: 2,
+                            overflow: 'hidden',
+                        },
                         fontFamily: 'Verdana',
                     }}
                 />
                 <CardContent>
-                    {src && !String(src).toLowerCase().includes('.pdf') ? (
-                        <VideoPlayer src={src}></VideoPlayer>
-                    ) : (
-                        <img
-                            src={project_image}
-                            alt={Title}
-                            className={imageLoaded ? 'image-loaded' : ''}
-                            onLoad={() => setImageLoaded(true)}
-                            style={{
-                                width: '100%',
-                                height: 'auto',
-                                borderRadius: '8px',
-                                opacity: imageLoaded ? 1 : 0,
-                                transition: 'opacity 0.5s ease',
-                            }}
-                        />
-                    )}
+                    <Box
+                        sx={{
+                            width: '100%',
+                            aspectRatio: '16 / 9',
+                            overflow: 'hidden',
+                            borderRadius: 2,
+                            display: 'grid',
+                            placeItems: 'center',
+                            bgcolor:
+                                mode === 'off'
+                                    ? 'rgba(255,255,255,0.06)'
+                                    : 'rgba(35,25,55,0.06)',
+                            '& > div': { width: '100%', height: '100%' },
+                        }}
+                    >
+                        {isVideo ? (
+                            <VideoPlayer src={src} />
+                        ) : hasImage ? (
+                            <Box
+                                component="img"
+                                src={project_image}
+                                alt={`${Title} project preview`}
+                                onError={() => setImageFailed(true)}
+                                sx={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                }}
+                            />
+                        ) : (
+                            <Box sx={{ textAlign: 'center', p: 2 }}>
+                                <Avatar
+                                    src={AvatarIcon}
+                                    alt=""
+                                    sx={{
+                                        width: 56,
+                                        height: 56,
+                                        mx: 'auto',
+                                        mb: 1,
+                                        bgcolor: 'transparent',
+                                    }}
+                                />
+                                <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+                                >
+                                    Preview unavailable
+                                </Typography>
+                            </Box>
+                        )}
+                    </Box>
                 </CardContent>
                 <CardActions>
                     <CustomButton variant="text" onClick={() => {}}>
-                        Tap to view more
+                        View project details
                     </CustomButton>
                 </CardActions>
             </Card>
-        </>
     )
 }
 
