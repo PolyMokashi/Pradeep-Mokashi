@@ -21,7 +21,7 @@ const Education = ({ mode, education }) => {
                     alignItems: { md: 'center' },
                 }}
             >
-                <Stack sx={{ width: { md: '70%' } }}>
+                <Stack sx={{ width: { xs: '100%', md: '70%' } }}>
                     {education.map((data, index) =>
                         isMobile ? (
                             <ExpMobileView

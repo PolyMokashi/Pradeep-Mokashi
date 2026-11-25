@@ -20,7 +20,7 @@ const Experience = ({ mode, experience }) => {
                     alignItems: { md: 'center' },
                 }}
             >
-                <Stack sx={{ width: { md: '70%' } }}>
+                <Stack sx={{ width: { xs: '100%', md: '70%' } }}>
                     {experience.map((data, index) =>
                         isMobile ? (
                             <ExpMobileView

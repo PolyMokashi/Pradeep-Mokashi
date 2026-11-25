@@ -20,33 +20,46 @@ const Footer = ({ mode, name, links }) => {
                 position: 'relative',
                 bottom: 0,
                 width: '100%',
-                py: 3,
+                pt: { xs: 1.5, sm: 3 },
+                pb: { xs: 10, sm: 3 },
                 backdropFilter: 'blur(10px)',
             }}
         >
             <Divider sx={{ 
                 borderColor: mode === 'on' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
-                mb: 2
+                mb: { xs: 1.5, sm: 2 }
             }} />
 
             <Box
                 sx={{
                     maxWidth: 980,
+                    width: '100%',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: 2,
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    justifyContent: { xs: 'center', sm: 'space-between' },
+                    gap: { xs: 1, sm: 2 },
                     flexWrap: 'wrap',
-                    mx:1
+                    mx: 'auto',
+                    px: { xs: 1, sm: 2 },
                 }}
             >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, minWidth: 0, mx:1}}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: { xs: 'center', sm: 'flex-start' },
+                        minWidth: 0,
+                    }}
+                >
                     <Typography
                         variant="body2"
                         component="p"
                         sx={{
                             color: mode === 'on' ? '#555' : '#aaa',
-                            whiteSpace: 'nowrap',
+                            textAlign: { xs: 'center', sm: 'left' },
+                            fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                            whiteSpace: { xs: 'normal', sm: 'nowrap' },
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                         }}
@@ -55,7 +68,7 @@ const Footer = ({ mode, name, links }) => {
                     </Typography>
                 </Box>
 
-                <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', gap: { xs: 0.5, sm: 1 }, alignItems: 'center' }}>
                     {links.map((link) => (
                         <IconButton
                             key={link.label}
@@ -63,6 +76,11 @@ const Footer = ({ mode, name, links }) => {
                             color="inherit"
                             aria-label={link.label}
                             sx={{
+                                p: { xs: 0.5, sm: 1 },
+                                '& img': {
+                                    width: { xs: 22, sm: 28 },
+                                    height: { xs: 22, sm: 28 },
+                                },
                                 transition: 'transform 0.3s ease',
                                 '&:hover': {
                                     transform: 'translateY(-3px) scale(1.1)',
@@ -70,8 +88,6 @@ const Footer = ({ mode, name, links }) => {
                             }}
                         >
                             <img
-                                width="28"
-                                height="28"
                                 src={link.icon}
                                 alt=""
                             />
@@ -81,7 +97,11 @@ const Footer = ({ mode, name, links }) => {
                     <Typography
                         variant="body2"
                         component="p"
-                        sx={{ color: mode === 'on' ? '#777' : '#888', whiteSpace: 'nowrap' }}
+                        sx={{
+                            color: mode === 'on' ? '#777' : '#888',
+                            whiteSpace: 'nowrap',
+                            fontSize: '0.75rem',
+                        }}
                     >
                         Icons by <Link to="https://icons8.com/">Icons8</Link>
                     </Typography>
