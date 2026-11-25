@@ -12,7 +12,7 @@ const Home = lazy(() => import('./pages/Home/Home'))
 const About = lazy(() =>
     import('./pages/About/About').then((module) => ({ default: module.About }))
 )
-const Error = lazy(() =>
+const ErrorPage = lazy(() =>
     import('./pages/Error/Error404').then((module) => ({
         default: module.Error,
     }))
@@ -200,7 +200,7 @@ function App() {
                     path="/achievements"
                     element={<AchievementsPage mode={mode} certificates={portfolio.certificates} />}
                 />
-                <Route path="*" element={<Error mode={mode} />} />
+                <Route path="*" element={<ErrorPage mode={mode} />} />
             </Routes>
             </Suspense>
             {isFooterVisible && (

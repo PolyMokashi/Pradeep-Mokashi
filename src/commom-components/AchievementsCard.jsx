@@ -6,7 +6,6 @@ import {
     Card,
     CardActions,
     CardHeader,
-    Grid,
     Typography,
 } from '@mui/material'
 
@@ -108,17 +107,22 @@ const CertificateCard = ({ card, mode }) => {
 }
 
 const AchievementsCard = ({ mode, certificates }) => (
-    <Grid
-        container
-        spacing={{ xs: 2, sm: 3 }}
-        sx={{ maxWidth: 1200, mx: 'auto', pb: { xs: 10, md: 12 } }}
+    <Box
+        sx={{
+            display: 'grid',
+            gridTemplateColumns:
+                'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: { xs: 2, sm: 3 },
+            width: '100%',
+            maxWidth: 1200,
+            mx: 'auto',
+            pb: { xs: 10, md: 12 },
+        }}
     >
         {certificates.map((card) => (
-            <Grid item xs={12} sm={6} md={4} key={card.id}>
-                <CertificateCard card={card} mode={mode} />
-            </Grid>
+            <CertificateCard key={card.id} card={card} mode={mode} />
         ))}
-    </Grid>
+    </Box>
 )
 
 export default AchievementsCard
