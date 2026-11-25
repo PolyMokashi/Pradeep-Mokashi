@@ -121,6 +121,14 @@ export function About({
                         >
                             {profile.headline}
                         </Typography>
+                        {profile.summary && (
+                            <Typography
+                                level="body-sm"
+                                sx={{ mt: 1.5, textAlign: 'left' }}
+                            >
+                                {profile.summary}
+                            </Typography>
+                        )}
                         <Sheet
                             sx={{
                                 bgcolor: 'background.level1',
@@ -169,6 +177,14 @@ export function About({
                                 </AwesomeButtonSocial>
                             ))}
                         </Box>
+                        {profile.languages?.length > 0 && (
+                            <Typography level="body-sm" sx={{ mt: 1.5 }}>
+                                <strong>Languages:</strong>{' '}
+                                {profile.languages
+                                    .map((language) => `${language.name} (${language.level})`)
+                                    .join(' | ')}
+                            </Typography>
+                        )}
                     </CardContent>
                 </Card>
             </motion.div>

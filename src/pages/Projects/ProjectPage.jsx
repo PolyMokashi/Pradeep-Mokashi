@@ -99,6 +99,7 @@ const ProjectPage = ({ mode, projects }) => {
                         Title={selectedCard.Title}
                         Description={selectedCard.Description}
                         SubHeader={selectedCard.SubHeader}
+                        AvatarIcon={selectedCard.AvatarIcon}
                         src={selectedCard.src}
                         project_image={selectedCard.project_image}
                         TechIcon={selectedCard.TechIcon}

@@ -11,6 +11,7 @@ const CommonDrawer = ({
     Title,
     Description,
     SubHeader,
+    AvatarIcon,
     src,
     project_image,
     TechIcon,
@@ -59,15 +60,36 @@ const CommonDrawer = ({
                                         src={src}
                                     ></VideoPlayer>
                                 )
-                            ) : (
+                            ) : project_image ? (
                                 <img
                                     src={project_image}
-                                    alt="Project Name"
+                                    alt={`${Title} project preview`}
                                     style={{
                                         width: '95%',
                                         height: '95%',
                                     }}
                                 ></img>
+                            ) : (
+                                <Box
+                                    role="img"
+                                    aria-label={`${Title} preview`}
+                                    sx={{
+                                        width: '95%',
+                                        minHeight: 220,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: 1,
+                                        bgcolor: 'background.level1',
+                                        borderRadius: 'md',
+                                    }}
+                                >
+                                    <Avatar src={AvatarIcon} alt="" />
+                                    <Typography level="body-sm">
+                                        Project image coming soon
+                                    </Typography>
+                                </Box>
                             )}
                         </Box>
                         <Box sx={{ mt: 2 }}>

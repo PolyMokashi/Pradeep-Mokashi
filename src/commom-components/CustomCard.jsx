@@ -126,7 +126,7 @@ const CustomCard = ({
                                     variant="body2"
                                     color="text.secondary"
                                 >
-                                    Preview unavailable
+                                    Project image coming soon
                                 </Typography>
                             </Box>
                         )}
